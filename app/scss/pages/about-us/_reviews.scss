@@ -72,6 +72,10 @@
 					margin-top: 0px;
 				}
 			}
+
+			@media (min-width: 1440px) {
+				align-self: start;
+			}
 		}
 
 		// .reviews__gallery--image
