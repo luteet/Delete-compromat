@@ -1,0 +1,155 @@
+
+@font-face {
+	@include font-include('Gilroy', 400, swap, normal, 'Gilroy-Regular');
+}
+
+@font-face {
+	@include font-include('Gilroy', 700, swap, normal, 'Gilroy-Bold');
+}
+
+@font-face {
+	@include font-include('Gilroy', 600, swap, normal, 'Gilroy-Semibold');
+}
+
+@font-face {
+	@include font-include('Gilroy', 500, swap, normal, 'Gilroy-Medium');
+}
+
+@font-face {
+	@include font-include('Oswald', 300, swap, normal, 'Oswald-Light');
+}
+
+@font-face {
+	@include font-include('Oswald', 400, swap, normal, 'Oswald-Regular');
+}
+
+@font-face {
+	@include font-include('Oswald', 500, swap, normal, 'Oswald-Medium');
+}
+
+@font-face {
+	@include font-include('Oswald', 600, swap, normal, 'Oswald-SemiBold');
+}
+
+@font-face {
+	@include font-include('Oswald', 700, swap, normal, 'Oswald-Bold');
+}
+
+@font-face {
+	font-weight: 400;
+	font-family: "Segoe UI";
+	font-display: swap;
+	font-style: normal;
+
+	src: local("Segoe UI"), url('SegoeUI.woff') format('woff'), url('SegoeUI.woff2') format('woff2');
+}
+
+.main-title {
+	font-family: var(--title-font);
+	font-weight: 400;
+	line-height: 106%;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+
+	font-size: 1.75rem;
+
+	@include _550 {
+		font-size: 2rem;
+	}
+	
+	@include _768 {
+		font-size: 3.5rem;
+	}
+	
+	@include _992 {
+		font-size: 4rem;
+	}
+
+	@media (min-width: 1440px) {
+		font-size: 5rem;
+	}
+}
+
+.title {
+	
+	font-family: var(--title-font);
+	font-weight: 400;
+	line-height: 131%;
+	text-transform: uppercase;
+	color: var(--text-color-2);
+	a {
+		color: var(--text-color-2);
+	}
+
+	font-size: 1.5rem;
+
+	@include _550 {
+		font-size: 2rem;
+	}
+	
+	@include _768 {
+		font-size: 3rem;
+	}
+	
+	@include _992 {
+		font-size: 4.0625rem;
+	}
+
+	&._min {
+		font-size: 1.3rem;
+
+		@include _550 {
+			font-size: 1.75rem;
+		}
+		
+		@include _768 {
+			font-size: 2.5rem;
+		}
+		
+		@include _992 {
+			font-size: 2.8125rem;
+		}
+	}
+
+}
+
+.min-title {
+
+	font-family: var(--title-font);
+	font-weight: 400;
+	font-size: 1.25rem;
+	text-transform: uppercase;
+	@include _550 {
+		font-size: 1.5rem;
+	}
+	
+	@include _768 {
+		font-size: 1.75rem;
+	}
+	
+	@include _992 {
+		font-size: 2.1875rem;
+	}
+	line-height: 100%;
+
+	&._accent {
+		color: var(--accent);
+	}
+}
+
+/* .section-title {
+
+	font-family: var(--title-font);
+	font-weight: 700;
+
+} */
+
+mark {
+	background: transparent;
+	color: var(--accent);
+	font-weight: 700;
+}
+
+.txt-center {
+	text-align: center;
+}

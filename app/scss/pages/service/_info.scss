@@ -1,0 +1,174 @@
+.service-info {
+
+	padding-top: 60px; padding-bottom: 60px;
+	@include _992 {
+		padding-top: 123px; padding-bottom: 131px;
+	}
+
+	background: var(--white);
+
+	// .service-info__wrapper
+
+	&__wrapper {
+	}
+
+	// .service-info__block
+
+	&__block {
+		&:not(:first-child) {
+			margin-top: 40px;
+			@include _992 {
+				margin-top: 126px;
+			}
+		}
+		display: grid;
+		@include _992 {
+			grid-template-columns: auto minmax(200px, 520px);
+		}
+		
+		&:nth-child(even) {
+			@include _992 {
+				grid-template-columns: minmax(200px, 520px) auto;
+			}
+		}
+	}
+
+	&__block:nth-child(even) &__content {
+		
+		@include _992 {
+			grid-column: 2;
+			padding-left: 87px; padding-right: 0;
+		}
+
+		
+
+		h3::before {
+			@include _992 {
+				width: 100vw;
+			}
+		}
+	}
+
+	&__block:nth-child(even) &__gallery {
+		
+		@include _992 {
+			grid-column: 1; grid-row: 1;
+		}
+
+		&--item:first-child {
+			width: 80%;
+		}
+	}
+
+	// .service-info__content
+
+	&__content {
+		
+		@include _992 {
+			padding-right: 30px;
+		}
+
+		mark {
+			@include _992 {
+				font-size: 1.125rem;
+			}
+
+			padding-top: 10px;
+			font-size: 1rem;
+			font-weight: 600;
+			line-height: 133%;
+		}
+
+		h3 {
+
+			font-size: 1.25rem;
+
+			@include _550 {
+				font-size: 1.5rem;
+			}
+			
+			@include _768 {
+				font-size: 2rem;
+				padding-top: 25px;
+				padding-bottom: 38px; margin-bottom: 22px;
+			}
+			
+			@include _992 {
+				font-size: 2.8125rem;
+			}
+
+			font-family: var(--title-font);
+			line-height: 100%;
+			text-transform: uppercase;
+			color: #232323;
+
+			padding-bottom: 20px; margin-bottom: 10px;
+			padding-top: 15px;
+
+			position: relative;
+			&::before {
+				content: '';
+				position: absolute;
+				left: 0; bottom: 0;
+				width: 100%;
+				border-bottom: 1px solid #D5D5D5;
+			}
+
+		}
+
+		p {
+			padding-top: 10px;
+		}
+	}
+
+	// .service-info__gallery
+
+	&__gallery {
+
+		margin-top: 30px;
+
+		@include _992 {
+			margin-top: 0;
+		}
+
+		align-self: self-end;
+
+		display: grid;
+		gap: 10px;
+
+		padding: 10px 10px 0 10px;
+
+		@include _550 {
+			gap: 20px;
+
+			padding: 30px 30px 0 30px;
+		}
+		position: relative;
+		&::before {
+			content: '';
+			position: absolute;
+			left: 0; top: 0;
+			width: 100%; height: calc(100% - 30px);
+			z-index: -1;
+			background: #232323;
+			border-radius: 10px;
+		}
+
+		// .service-info__gallery--item
+
+		&--item {
+			min-height: 150px;
+		}
+
+		// .service-info__gallery--image
+
+		&--image {
+			min-height: 100%;
+			img {
+				background: #C2C2C2;
+				border-radius: 10px;
+				
+			}
+		}
+	}
+}

@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.image-body {
+			width: 100%;
+			position: relative;
+		}
+
+		.image-body img {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		.image-filter {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background: 0 0 / 90px repeat;
+			opacity: 0.1;
+			pointer-events: none;
+		}
+
+		@media (min-width: 550px) {
+			.image-filter {
+				background: 0 0 / 250px repeat;
+				opacity: 0.05;
+			}
+		}
+
+		.lazy {
+			opacity: 0;
+		}
+
+		.lazy.loaded {
+			opacity: 1;
+		}
+	</style>
+	<link rel="stylesheet" href="css/style-critical.min.css">
+	<link rel="stylesheet" href="css/style.min.css" media="print" onload="this.media='all'; this.onload=null;">
+	<script>
+		document.querySelector('html').style.setProperty("--vh", window.innerHeight * 0.01 + "px");
+	</script>
+</head>
+
+<body>
+	<div class="image-filter-base" data-url="img/filter.webp"></div>
+	<div class="wrapper">
+		<header class="header container _alt">
+			<div class="header__wrapper">
+				<a href="index.html" class="header__logo">
+					<img src="img/logo.svg" alt="Logo" width="70" height="27" loading="lazy" class="header__logo--img">
+				</a>
+				<nav class="header__nav">
+					<div class="header__nav--body">
+						<ul class="header__nav--list">
+							<li>
+								<a href="#" aria-label="Главная">
+									<span>Главная</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" aria-label="Блог">
+									<span>Блог</span>
+								</a>
+								<ul>
+									<li>
+										<a href="#">
+											Мониторинг негативной информации
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Удаление негативной информации
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Проведение расследований
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Оперативное реагирование
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Помощь в прохождении комплаенса
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#" aria-label="О нас">
+									<span>О нас</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" aria-label="Услуги">
+									<span>Услуги</span>
+								</a>
+								<ul>
+									<li>
+										<a href="#">
+											Мониторинг негативной информации
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Удаление негативной информации
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Проведение расследований
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Оперативное реагирование
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Помощь в прохождении комплаенса
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#feedback-popup" aria-label="Связаться">
+									<span>Связаться</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+				<button class="header__burger" type="button" aria-label="Menu">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+			</div>
+		</header>
+
+		<main class="main">
+			<section class="hero">
+				<div class="hero__hashtag container">
+					<span class="hero__hashtag--span">
+						#Deletecompromat
+					</span>
+					<ul class="hero__hashtag--list">
+						<li>
+							<b>serm</b>
+							<span>Search Engine Reputation Management</span>
+						</li>
+						<li>
+							<b>ORM</b>
+							<span>Online Reputation Managment</span>
+						</li>
+					</ul>
+				</div>
+				<div class="hero__wrapper">
+					<div class="hero__row container _min">
+						<div class="hero__content">
+							<h1 class="hero__title main-title">
+								Мониторинг
+							</h1>
+							<div class="hero__text">
+								<p>
+									Проводим мониторинг негативной информации о Вас или Вашей компании 24/7.
+									Наблюдение в режиме реального времени. Возможность заглянуть в прошлое — глубина поиска 14 лет.
+								</p>
+							</div>
+						</div>
+						<div class="hero__gallery">
+							<div class="hero__gallery--item">
+								<div class="hero__gallery--image image-body">
+									<picture>
+										<source data-srcset="img/index/hero/index-hero-image-1.webp" type="image/webp">
+										<img data-src="img/index/hero/index-hero-image-1.jpg" alt="" width="381" height="229" class="lazy">
+									</picture>
+									<div class="image-filter"></div>
+								</div>
+							</div>
+							<div class="hero__gallery--item">
+								<div class="hero__gallery--image image-body">
+									<picture>
+										<source data-srcset="img/index/hero/index-hero-image-2.webp" type="image/webp">
+										<img data-src="img/index/hero/index-hero-image-2.jpg" alt="" width="175" height="145" class="lazy">
+									</picture>
+									<div class="image-filter"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="hero__row container">
+						<div class="hero__content">
+							<h1 class="hero__title main-title">
+								Удаление
+							</h1>
+							<div class="hero__text">
+								<p>Удаляем любую информацию на любых площадках: статьи, ролики, отзывы, фото и видео. Поможем исключить из поиска негатив и фейки.</p>
+							</div>
+						</div>
+						<div class="hero__gallery">
+							<div class="hero__gallery--item">
+								<div class="hero__gallery--image image-body">
+									<picture>
+										<source data-srcset="img/index/hero/index-hero-image-3.webp" type="image/webp">
+										<img data-src="img/index/hero/index-hero-image-3.jpg" alt="" width="254" height="220" class="lazy">
+									</picture>
+									<div class="image-filter"></div>
+								</div>
+							</div>
+							<div class="hero__gallery--item">
+								<div class="hero__gallery--image image-body">
+									<picture>
+										<source data-srcset="img/index/hero/index-hero-image-4.webp" type="image/webp">
+										<img data-src="img/index/hero/index-hero-image-4.jpg" alt="" width="416" height="220" class="lazy">
+									</picture>
+									<div class="image-filter"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="hero__hashtag container">
+					<span class="hero__hashtag--span">
+						#Deletecompromat
+					</span>
+				</div>
+			</section>
+			<section class="services">
+				<h2 class="visually-hidden">Услуги</h2>
+				<ul class="services__min container">
+					<li class="services__min--item">
+						<div class="services__min--icon">
+							<img src="img/index/services/index-services-icon-1.svg" width="20" height="25" loading="lazy" alt="">
+						</div>
+						<h3>
+							SERM и ORM
+						</h3>
+						<p>
+							все услуги в одном месте
+						</p>
+					</li>
+					<li class="services__min--item">
+						<div class="services__min--icon">
+							<img src="img/index/services/index-services-icon-2.svg" width="20" height="25" loading="lazy" alt="">
+						</div>
+						<h3>
+							Предотвращаем
+						</h3>
+						<p>
+							появление негтива в сети
+						</p>
+					</li>
+					<li class="services__min--item">
+						<div class="services__min--icon">
+							<img src="img/index/services/index-services-icon-3.svg" width="20" height="25" loading="lazy" alt="">
+						</div>
+						<h3>
+							Удаление
+						</h3>
+						<p>
+							негативной информации
+						</p>
+					</li>
+					<li class="services__min--item">
+						<div class="services__min--icon">
+							<img src="img/index/services/index-services-icon-4.svg" width="20" height="25" loading="lazy" alt="">
+						</div>
+						<h3>
+							Мониторинг
+						</h3>
+						<p>
+							производится беспрерывно
+						</p>
+					</li>
+					<li class="services__min--item">
+						<div class="services__min--icon">
+							<img src="img/index/services/index-services-icon-5.svg" width="20" height="25" loading="lazy" alt="">
+						</div>
+						<h3>
+							Оперативно
+						</h3>
+						<p>
+							оповещаем и принимаем меры
+						</p>
+					</li>
+					<li class="services__min--item">
+						<div class="services__min--icon">
+							<img src="img/index/services/index-services-icon-6.svg" width="20" height="25" loading="lazy" alt="">
+						</div>
+						<h3>
+							Создаем
+						</h3>
+						<p>
+							инфо-поводы и мнения
+						</p>
+					</li>
+				</ul>
+				<ul class="services__list container">
+					<li class="services__item service-item">
+						<div class="service-item__gallery gallery-block _column-end-min">
+							<div class="service-item__gallery--body gallery-block__body">
+								<span class="service-item__gallery--text gallery-block__text">МОНИТОРИНГ В РЕЖИМЕ 24/7</span>
+								<div class="service-item__gallery--list gallery-block__wrapper">
+									<div class="service-item__gallery--item gallery-block__item">
+										<div class="service-item__gallery--image gallery-block__image image-body">
+											<picture>
+												<source data-srcset="img/services/services-image-1.webp" type="image/webp">
+												<img data-src="img/services/services-image-1.jpg" alt="" width="460" height="171" class="lazy">
+											</picture>
+											<div class="image-filter"></div>
+										</div>
+									</div>
+									<div class="service-item__gallery--item gallery-block__item">
+										<div class="service-item__gallery--image gallery-block__image image-body">
+											<picture>
+												<source data-srcset="img/services/services-image-2.webp" type="image/webp">
+												<img data-src="img/services/services-image-2.jpg" alt="" width="460" height="209" class="lazy">
+											</picture>
+											<div class="image-filter"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="service-item__content">
+							<h3 class="service-item__title title" aria-label="Мониторинг негативной информации">
+								<a href="service-page.html">
+									Мониторинг негативной информации
+								</a>
+							</h3>
+							<div class="service-item__content--footer">
+								<div class="service-item__content--block">
+									<div class="service-item__text">
+										<p>
+											Поможем отследить любую информацию, которую публикуют в Интернете о Вас или вашей компании. Это поможет оперативно реагировать на любые угрозы Вашей деловой репуатции.
+										</p>
+									</div>
+									<span class="service-item__decor-text">
+										МОНИТОРИНГ В РЕЖИМЕ 24/7
+									</span>
+								</div>
+								<div class="service-item__btn-wrapper btn-wrapper">
+									<a href="service-page.html" class="service-item__btn btn">
+										Узнать больше
+									</a>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="services__item service-item">
+						<div class="service-item__gallery gallery-block _column-start">
+							<div class="service-item__gallery--body gallery-block__body">
+								<span class="service-item__gallery--text gallery-block__text">Удаление с гарантией</span>
+								<div class="service-item__gallery--list gallery-block__wrapper">
+									<div class="service-item__gallery--item gallery-block__item">
+										<div class="service-item__gallery--image gallery-block__image image-body">
+											<picture>
+												<source data-srcset="img/services/services-image-3.webp" type="image/webp">
+												<img data-src="img/services/services-image-3.jpg" alt="" width="460" height="171" class="lazy">
+											</picture>
+											<div class="image-filter"></div>
+										</div>
+									</div>
+									<div class="service-item__gallery--item gallery-block__item">
+										<div class="service-item__gallery--image gallery-block__image image-body">
+											<picture>
+												<source data-srcset="img/services/services-image-4.webp" type="image/webp">
+												<img data-src="img/services/services-image-4.jpg" alt="" width="460" height="209" class="lazy">
+											</picture>
+											<div class="image-filter"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="service-item__content">
+							<h3 class="service-item__title title" aria-label="Удаление негативной информации">
+								<a href="service-page.html">
+									Удаление негативной информации
+								</a>
+							</h3>
+							<div class="service-item__content--footer">
+								<div class="service-item__content--block">
+									<div class="service-item__text">
+										<p>
+											Очистим поисковую выдачу от негатива. Также удаляем публикации в социальных сетях: YouTube, Twitter, Vkontakte, Facebook, Odnoklassniki, Telegram. Удалим личные фотографии и персональные данные .
+										</p>
+									</div>
+									<span class="service-item__decor-text">
+										Удаление с гарантией
+									</span>
+								</div>
+								<div class="service-item__btn-wrapper btn-wrapper">
+									<a href="service-page.html" class="service-item__btn btn">
+										Узнать больше
+									</a>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="services__item service-item">
+						<div class="service-item__gallery gallery-block _row">
+							<div class="service-item__gallery--body gallery-block__body">
+								<span class="service-item__gallery--text gallery-block__text">ВЫЯВЛЯЕМ ИСТОЧНИК</span>
+								<div class="service-item__gallery--list gallery-block__wrapper">
+									<div class="service-item__gallery--item gallery-block__item">
+										<div class="service-item__gallery--image gallery-block__image image-body">
+											<picture>
+												<source data-srcset="img/services/services-image-5.webp" type="image/webp">
+												<img data-src="img/services/services-image-5.jpg" alt="" width="460" height="171" class="lazy">
+											</picture>
+											<div class="image-filter"></div>
+										</div>
+									</div>
+									<div class="service-item__gallery--item gallery-block__item">
+										<div class="service-item__gallery--image gallery-block__image image-body">
+											<picture>
+												<source data-srcset="img/services/services-image-6.webp" type="image/webp">
+												<img data-src="img/services/services-image-6.jpg" alt="" width="460" height="209" class="lazy">
+											</picture>
+											<div class="image-filter"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="service-item__content">
+							<h3 class="service-item__title title" aria-label="Проведение расследований">
+								<a href="service-page.html">
+									Проведение расследований
+								</a>
+							</h3>
+							<div class="service-item__content--footer">
+								<div class="service-item__content--block">
+									<div class="service-item__text">
+										<p>
+											Найдем и предоставим факты о зачинщиках распространяющих фейки и негатив. Если Вы устранили негативную информацию, но не разобрались с источником этого негатива. Распространения материалов в негативном ключе продолжится.
+										</p>
+									</div>
+									<span class="service-item__decor-text">
+										ВЫЯВЛЯЕМ ИСТОЧНИК
+									</span>
+								</div>
+								<div class="service-item__btn-wrapper btn-wrapper">
+									<a href="service-page.html" class="service-item__btn btn">
+										Узнать больше
+									</a>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="services__item service-item">
+						<div class="service-item__gallery gallery-block">
+							<div class="service-item__gallery--body gallery-block__body">
+								<span class="service-item__gallery--text gallery-block__text">НА СВЯЗИ 24/7</span>
+								<div class="service-item__gallery--list gallery-block__wrapper">
+									<div class="service-item__gallery--item gallery-block__item">
+										<div class="service-item__gallery--image gallery-block__image image-body">
+											<picture>
+												<source data-srcset="img/services/services-image-7.webp" type="image/webp">
+												<img data-src="img/services/services-image-7.jpg" alt="" width="460" height="171" class="lazy">
+											</picture>
+											<div class="image-filter"></div>
+										</div>
+									</div>
+									<div class="service-item__gallery--item gallery-block__item">
+										<div class="service-item__gallery--image gallery-block__image image-body">
+											<picture>
+												<source data-srcset="img/services/services-image-8.webp" type="image/webp">
+												<img data-src="img/services/services-image-8.jpg" alt="" width="460" height="209" class="lazy">
+											</picture>
+											<div class="image-filter"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="service-item__content">
+							<h3 class="service-item__title title" aria-label="Создания информационного поля">
+								<a href="service-page.html">
+									Создания информационного поля
+								</a>
+							</h3>
+							<div class="service-item__content--footer">
+								<div class="service-item__content--block">
+									<div class="service-item__text">
+										<p>
+											Подготовим опровержение, ответим на негативные отзывы в социальных сетях. Подготовим и выпустим PR статьи в СМИ.
+										</p>
+									</div>
+									<span class="service-item__decor-text">
+										НА СВЯЗИ 24/7
+									</span>
+								</div>
+								<div class="service-item__btn-wrapper btn-wrapper">
+									<a href="service-page.html" class="service-item__btn btn">
+										Узнать больше
+									</a>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="services__item service-item">
+						<div class="service-item__gallery gallery-block _column-end-min">
+							<div class="service-item__gallery--body gallery-block__body">
+								<span class="service-item__gallery--text gallery-block__text">GDPR COMPLIANCE</span>
+								<div class="service-item__gallery--list gallery-block__wrapper">
+									<div class="service-item__gallery--item gallery-block__item">
+										<div class="service-item__gallery--image gallery-block__image image-body">
+											<picture>
+												<source data-srcset="img/services/services-image-9.webp" type="image/webp">
+												<img data-src="img/services/services-image-9.jpg" alt="" width="460" height="171" class="lazy">
+											</picture>
+											<div class="image-filter"></div>
+										</div>
+									</div>
+									<div class="service-item__gallery--item gallery-block__item">
+										<div class="service-item__gallery--image gallery-block__image image-body">
+											<picture>
+												<source data-srcset="img/services/services-image-10.webp" type="image/webp">
+												<img data-src="img/services/services-image-10.jpg" alt="" width="460" height="209" class="lazy">
+											</picture>
+											<div class="image-filter"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="service-item__content">
+							<h3 class="service-item__title title" aria-label="Поможем пройти комплаенс банка">
+								<a href="service-page.html">
+									Поможем пройти комплаенс банка
+								</a>
+							</h3>
+							<div class="service-item__content--footer">
+								<div class="service-item__content--block">
+									<div class="service-item__text">
+										<p>
+											Проконсультируем и расскажем о требованиях конкретного банка. Укажем на возможные риски при прохождении. Сформируем систему поддержки деловой репутации.
+										</p>
+									</div>
+									<span class="service-item__decor-text">
+										GDPR COMPLIANCE
+									</span>
+								</div>
+								<div class="service-item__btn-wrapper btn-wrapper">
+									<a href="service-page.html" class="service-item__btn btn">
+										Узнать больше
+									</a>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="services__item service-item">
+						<div class="service-item__gallery gallery-block _column-end">
+							<div class="service-item__gallery--body gallery-block__body">
+								<span class="service-item__gallery--text gallery-block__text">НА СВЯЗИ 24/7</span>
+								<div class="service-item__gallery--list gallery-block__wrapper">
+									<div class="service-item__gallery--item gallery-block__item">
+										<div class="service-item__gallery--image gallery-block__image image-body">
+											<picture>
+												<source data-srcset="img/services/services-image-11.webp" type="image/webp">
+												<img data-src="img/services/services-image-11.jpg" alt="" width="460" height="171" class="lazy">
+											</picture>
+											<div class="image-filter"></div>
+										</div>
+									</div>
+									<div class="service-item__gallery--item gallery-block__item">
+										<div class="service-item__gallery--image gallery-block__image image-body">
+											<picture>
+												<source data-srcset="img/services/services-image-12.webp" type="image/webp">
+												<img data-src="img/services/services-image-12.jpg" alt="" width="460" height="209" class="lazy">
+											</picture>
+											<div class="image-filter"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="service-item__content">
+							<h3 class="service-item__title title" aria-label="Правовая <br> поддержка">
+								<a href="service-page.html">
+									Правовая <br> поддержка
+								</a>
+							</h3>
+							<div class="service-item__content--footer">
+								<div class="service-item__content--block">
+									<div class="service-item__text">
+										<p>
+											Защитим Вашу честь, достоинство и деловую репутацию в правовом поле. Поможем получить судебное постановление о удалении информации как поисковых сетях и социальных сетях.
+										</p>
+									</div>
+									<span class="service-item__decor-text">
+										НА СВЯЗИ 24/7
+									</span>
+								</div>
+								<div class="service-item__btn-wrapper btn-wrapper">
+									<a href="service-page.html" class="service-item__btn btn">
+										Узнать больше
+									</a>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</section>
+			<section class="international-support container">
+				<div class="international-support__content">
+					<h2 class="international-support__title title">
+						Международно правовая поддержка
+					</h2>
+					<div class="international-support__text">
+						<p>
+							<mark>Юридическая помощь</mark>
+						</p>
+						<p>
+							Помощь квалифицированных юристов по сложным вопросам, связанным с нанесением ущерба репутации компании. <br>
+							Без проблем получаем судебное решение по Goolge и Яндекс.Наши офисы расположены во всему миру. Международная команда специалистов готова прийти на помощь Вам и Вашей репутации и принять необходимые меры по ее защите.
+						</p>
+					</div>
+				</div>
+				<ul class="international-support__statistics">
+					<li>
+						<div class="international-support__statistics--icon">
+							<img src="img/index/international-support/international-support-icon-1.svg" width="40" height="40" loading="lazy" alt="">
+						</div>
+						<h3>7 лет</h3>
+						<p>Помогаем решить возникающие задачи</p>
+					</li>
+					<li>
+						<div class="international-support__statistics--icon">
+							<img src="img/index/international-support/international-support-icon-2.svg" width="40" height="40" loading="lazy" alt="">
+						</div>
+						<h3>10 лет</h3>
+						<p>Средний стаж профессиональной деятельности наших сотрудников.</p>
+					</li>
+					<li>
+						<div class="international-support__statistics--icon">
+							<img src="img/index/international-support/international-support-icon-3.svg" width="40" height="40" loading="lazy" alt="">
+						</div>
+						<h3>5 профессионалов</h3>
+						<p>В том числе, 2 адвоката, трудятся в нашей команде.</p>
+					</li>
+					<li>
+						<div class="international-support__statistics--icon">
+							<img src="img/index/international-support/international-support-icon-4.svg" width="40" height="40" loading="lazy" alt="">
+						</div>
+						<h3>1 млрд</h3>
+						<p>Мы сохранили в ходе судебных споров для своих клиентов.</p>
+					</li>
+				</ul>
+				<div class="international-support__footer">
+					<div class="international-support__btn-wrapper btn-wrapper">
+						<a href="#feedback-popup" class="international-support__btn btn open-popup">
+							Связаться
+						</a>
+					</div>
+				</div>
+			</section>
+			<section class="what-is container">
+				<ul class="what-is__countries countries-list">
+					<li>
+						<div class="countries-list__image" style="--container: 219px;">
+							<div class="image-body">
+								<img src="img/countries/britain.svg" width="219" height="342" alt="">
+							</div>
+						</div>
+						<b class="countries-list__name min-title">
+							Великобритания
+						</b>
+					</li>
+					<li>
+						<div class="countries-list__image" style="--container: 361px;">
+							<div class="image-body">
+								<img src="img/countries/austria.svg" width="361" height="185" alt="">
+							</div>
+						</div>
+						<b class="countries-list__name min-title">
+							Австрия
+						</b>
+					</li>
+					<li>
+						<div class="countries-list__image" style="--container: 365px;">
+							<div class="image-body">
+								<img src="img/countries/usa.svg" width="365" height="255" alt="">
+							</div>
+						</div>
+						<b class="countries-list__name min-title">
+							США
+						</b>
+					</li>
+					<li>
+						<div class="countries-list__image" style="--container: 399px;">
+							<div class="image-body">
+								<img src="img/countries/cyprus.svg" width="399" height="238" alt="">
+							</div>
+						</div>
+						<b class="countries-list__name min-title">
+							Кипр
+						</b>
+					</li>
+				</ul>
+				<ul class="what-is__statistic">
+					<li>
+						<b>95%</b>
+						<p>Судебных решений нами получены и исполнены</p>
+					</li>
+					<li>
+						<b>9/10</b>
+						<p>Клиентов рекомендуют нас своим партнерам</p>
+					</li>
+				</ul>
+				<h2 class="what-is__title title">
+					Что такое SERM и OMR
+				</h2>
+				<ul class="what-is__list">
+					<li>
+						<h3 class="min-title _accent">OMR</h3>
+						<p>
+							Управление репутацией во всем Интернете, включая поисковые и рекомендательные системы, форумы, социальные сети и СМИ. Это наиболее правильный и полный подход к управлению репутацией, который поможет выстроить положительный образ в сети.
+						</p>
+					</li>
+					<li>
+						<h3 class="min-title _accent">SERM</h3>
+						<p>
+							Репутация в выдаче поисковых систем. Специалисты этого направления занимаются поиском и удалением из поисковиков негативной информации и предпринимают меры по выводу положительных отзывов и публикаций на верхние строчки выдачи.
+						</p>
+					</li>
+				</ul>
+			</section>
+			<section class="process container">
+				<div class="process__header">
+					<div class="process__header--col">
+						<mark class="process__accent-text">
+							Как это устроено
+						</mark>
+						<h2 class="process__title title">
+							Процесс работы
+						</h2>
+					</div>
+					<div class="process__header--col">
+						<div class="process__text">
+							<p>
+								Быстрое и надежное удаление негативной информации. Поможем убрать информацию с сайта и исключить ее из поиска.
+							</p>
+						</div>
+					</div>
+				</div>
+				<ul class="process__list">
+					<li>
+						<div class="process__list--number"></div>
+						<h3>Заявка</h3>
+						<p>Вы оставляете заявку, мы скидываем инструкцию для защищенного общения</p>
+					</li>
+					<li>
+						<div class="process__list--number"></div>
+						<h3>Консультация</h3>
+						<p>Оцениваем всю вашу ситуацию и составляем план действий</p>
+					</li>
+					<li>
+						<div class="process__list--number"></div>
+						<h3>Подготовка</h3>
+						<p>Проводим подготовительный этап работ, уведомляя вас о промежуточных результатах</p>
+					</li>
+					<li>
+						<div class="process__list--number"></div>
+						<h3>Удаление</h3>
+						<p>Осуществляем удаление информации</p>
+					</li>
+				</ul>
+			</section>
+			<section class="complex-approach container">
+				<div class="complex-approach__header">
+					<div class="complex-approach__header--col">
+						<h2 class="complex-approach__title title">Комплексный подход</h2>
+						<mark class="complex-approach__accent-text">Полный спектр услуг по созданию и поддержке деловой онлайн-репутации</mark>
+					</div>
+					<div class="complex-approach__header--col">
+						<div class="complex-approach__text">
+							<p>
+								С нами легко построить хорошую цифровую репутацию. <br>
+								Формирование имиджа, антикризисный пиар, защита от черного пиара и бизнес рисков.
+							</p>
+						</div>
+					</div>
+				</div>
+				<ul class="complex-approach__list">
+					<li>
+						<img src="img/index/complex-approach/complex-approach-icon-1.svg" width="27" height="27" loading="lazy" alt="">
+						<h3>Мониторинг информации </h3>
+						<p>Проводим глубокий мониторинг негатива в поисковой выдаче и на социальных площадках.</p>
+					</li>
+					<li>
+						<img src="img/index/complex-approach/complex-approach-icon-2.svg" width="27" height="27" loading="lazy" alt="">
+						<h3>Сбор всей негативной выдачи</h3>
+						<p>Собираем ссылки на все ресурсы с негативом о Вас или о Вашей компании.</p>
+					</li>
+					<li>
+						<img src="img/index/complex-approach/complex-approach-icon-3.svg" width="27" height="27" loading="lazy" alt="">
+						<h3>Отчет</h3>
+						<p>Предоставляем отчет о негативной выдаче, оцениваем репутационные риски и составляем план работ.</p>
+					</li>
+					<li>
+						<img src="img/index/complex-approach/complex-approach-icon-4.svg" width="27" height="27" loading="lazy" alt="">
+						<h3>Удаление информации в сети</h3>
+						<p>Производим зачистку негативной зачистка негативной выдачи.</p>
+					</li>
+					<li>
+						<img src="img/index/complex-approach/complex-approach-icon-5.svg" width="27" height="27" loading="lazy" alt="">
+						<h3>Создание инфо-поля</h3>
+						<p>Создаем положительную репутацию бренда, инициируя комментарии, отзывы и публикации в СМИ.</p>
+					</li>
+					<li>
+						<img src="img/index/complex-approach/complex-approach-icon-6.svg" width="27" height="27" loading="lazy" alt="">
+						<h3>Результат</h3>
+						<p>После проделанной работы, мы формируем подробный отчет о результатах и выполненной работе.</p>
+					</li>
+				</ul>
+			</section>
+			<section class="consultation container dark-section">
+				<div class="consultation__header">
+					<h2 class="consultation__title title">
+						Стоимость удаления
+					</h2>
+					<div class="consultation__text">
+						<p>
+							Стоимость работ рассчитывается индивидуально исходя из особенностей инцидента, конъектуры выдачи, количества упоминаний и других факторов.
+						</p>
+						<p>
+							Чтобы узнать стоимость, заполните форму.Мы свяжемся с вами в течение часа!
+						</p>
+					</div>
+				</div>
+				<form class="consultation__form" method="post">
+					<label>
+						<input type="text" name="name-or-organization-name" placeholder="Имя/Название организации" required class="input">
+					</label>
+					<label>
+						<input type="email" name="email" placeholder="E-mail" required class="input">
+					</label>
+					<button class="standard-btn" type="submit">
+						Получить консультацию
+					</button>
+				</form>
+			</section>
+			<section class="guarantees container">
+				<h2 class="guarantees__title title">
+					ГАРАНТИИ И ОБЯЗАТЕЛЬСТВА
+				</h2>
+				<ul class="guarantees__list">
+					<li>
+						<div class="guarantees__list--icon">
+							<img src="img/index/guarantees/guarantees-icon-1.svg" width="28" height="28" loading="lazy" alt="">
+						</div>
+						<h3>
+							Гарантие на удаление
+						</h3>
+						<p>
+							Даем гарантию на удаленную информацию
+						</p>
+					</li>
+					<li>
+						<div class="guarantees__list--icon">
+							<img src="img/index/guarantees/guarantees-icon-2.svg" width="28" height="28" loading="lazy" alt="">
+						</div>
+						<h3>
+							Находим виновника
+						</h3>
+						<p>
+							Находим ответственных за черный pr
+						</p>
+					</li>
+					<li>
+						<div class="guarantees__list--icon">
+							<img src="img/index/guarantees/guarantees-icon-3.svg" width="28" height="28" loading="lazy" alt="">
+						</div>
+						<h3>
+							Конфиденциальность
+						</h3>
+						<p>
+							Общение по зашифрованным P2P каналам
+						</p>
+					</li>
+					<li>
+						<div class="guarantees__list--icon">
+							<img src="img/index/guarantees/guarantees-icon-4.svg" width="28" height="28" loading="lazy" alt="">
+						</div>
+						<h3>
+							24/7 Постоянно на связи
+						</h3>
+						<p>
+							Держим с вами связь в режиме 24/7
+						</p>
+					</li>
+				</ul>
+			</section>
+			<section class="blog-section container">
+				<mark class="blog-section__section-name">Блог</mark>
+				<h2 class="blog-section__title title">
+					Читайте новости компании
+				</h2>
+				<ul class="blog-section__list">
+					<li class="blog-section__card">
+						<a href="blog-page.html" class="blog-section__card--body">
+							<div class="blog-section__card--image image-body">
+								<picture>
+									<source data-srcset="img/blog/blog-image-1.webp" type="image/webp">
+									<img data-src="img/blog/blog-image--1.jpg" alt="" width="410" height="299" class="lazy">
+								</picture>
+								<div class="image-filter"></div>
+							</div>
+							<div class="blog-section__card--tag-list">
+								<span class="blog-section__card--tag blog-tag">Serm и ORM</span>
+							</div>
+							<h3 class="blog-section__card--title">
+								Удаление ссылок из Яндекса без суда
+							</h3>
+							<div class="blog-section__card--text">
+								<p>
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, commodi, quae facere quisquam illum ab vel quis obcaecati maxime nostrum nemo itaque! Sunt ipsa autem fugiat harum, a voluptatum voluptatem.
+								</p>
+							</div>
+							<div class="blog-section__card--footer">
+								<img src="img/logo.svg" width="95" height="35" loading="lazy" alt="" class="blog-section__card--logo">
+								<span class="blog-section__card--date">
+									8 июля, 2022
+								</span>
+							</div>
+						</a>
+
+					</li>
+					<li class="blog-section__card">
+						<a href="blog-page.html" class="blog-section__card--body">
+							<div class="blog-section__card--image image-body">
+								<picture>
+									<source data-srcset="img/blog/blog-image-2.webp" type="image/webp">
+									<img data-src="img/blog/blog-image--2.jpg" alt="" width="410" height="299" class="lazy">
+								</picture>
+								<div class="image-filter"></div>
+							</div>
+							<div class="blog-section__card--tag-list">
+								<span class="blog-section__card--tag blog-tag">Serm и ORM</span>
+							</div>
+							<h3 class="blog-section__card--title">
+								Удаление ссылок из Яндекса без суда
+							</h3>
+							<div class="blog-section__card--text">
+								<p>
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, commodi, quae facere quisquam illum ab vel quis obcaecati maxime nostrum nemo itaque! Sunt ipsa autem fugiat harum, a voluptatum voluptatem.
+								</p>
+							</div>
+							<div class="blog-section__card--footer">
+								<img src="img/logo.svg" width="95" height="35" loading="lazy" alt="" class="blog-section__card--logo">
+								<span class="blog-section__card--date">
+									8 июля, 2022
+								</span>
+							</div>
+						</a>
+
+					</li>
+					<li class="blog-section__card">
+						<a href="blog-page.html" class="blog-section__card--body">
+							<div class="blog-section__card--image image-body">
+								<picture>
+									<source data-srcset="img/blog/blog-image-1.webp" type="image/webp">
+									<img data-src="img/blog/blog-image--1.jpg" alt="" width="410" height="299" class="lazy">
+								</picture>
+								<div class="image-filter"></div>
+							</div>
+							<div class="blog-section__card--tag-list">
+								<span class="blog-section__card--tag blog-tag">Serm и ORM</span>
+							</div>
+							<h3 class="blog-section__card--title">
+								Удаление ссылок из Яндекса без суда
+							</h3>
+							<div class="blog-section__card--text">
+								<p>
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, commodi, quae facere quisquam illum ab vel quis obcaecati maxime nostrum nemo itaque! Sunt ipsa autem fugiat harum, a voluptatum voluptatem.
+								</p>
+							</div>
+							<div class="blog-section__card--footer">
+								<img src="img/logo.svg" width="95" height="35" loading="lazy" alt="" class="blog-section__card--logo">
+								<span class="blog-section__card--date">
+									8 июля, 2022
+								</span>
+							</div>
+						</a>
+
+					</li>
+					<li class="blog-section__card">
+						<a href="blog-page.html" class="blog-section__card--body">
+							<div class="blog-section__card--image image-body">
+								<picture>
+									<source data-srcset="img/blog/blog-image-2.webp" type="image/webp">
+									<img data-src="img/blog/blog-image--2.jpg" alt="" width="410" height="299" class="lazy">
+								</picture>
+								<div class="image-filter"></div>
+							</div>
+							<div class="blog-section__card--tag-list">
+								<span class="blog-section__card--tag blog-tag">Serm и ORM</span>
+							</div>
+							<h3 class="blog-section__card--title">
+								Удаление ссылок из Яндекса без суда
+							</h3>
+							<div class="blog-section__card--text">
+								<p>
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, commodi, quae facere quisquam illum ab vel quis obcaecati maxime nostrum nemo itaque! Sunt ipsa autem fugiat harum, a voluptatum voluptatem.
+								</p>
+							</div>
+							<div class="blog-section__card--footer">
+								<img src="img/logo.svg" width="95" height="35" loading="lazy" alt="" class="blog-section__card--logo">
+								<span class="blog-section__card--date">
+									8 июля, 2022
+								</span>
+							</div>
+						</a>
+
+					</li>
+				</ul>
+				<div class="blog-section__footer">
+					<div class="blog-section__btn-wrapper btn-wrapper">
+						<a href="blog.html" class="blog-section__btn btn">
+							Журнал
+						</a>
+					</div>
+				</div>
+			</section>
+			<section class="application container dark-section">
+				<div class="application__content">
+					<mark class="application__accent-text">ОСТАВИТЬ ЗАЯВКУ</mark>
+					<h2 class="application__title title">
+						Быстро ответим и проконсультируем
+					</h2>
+				</div>
+				<ul class="application__list">
+					<li>
+						<img src="img/index/application/application-icon-1.svg" width="38" height="38" loading="lazy" alt="">
+						<span>Ответ за 60 минут</span>
+					</li>
+					<li>
+						<img src="img/index/application/application-icon-2.svg" width="38" height="38" loading="lazy" alt="">
+						<span>Консультация бесплатно</span>
+					</li>
+					<li>
+						<img src="img/index/application/application-icon-3.svg" width="38" height="38" loading="lazy" alt="">
+						<span>Гарантия анонимности</span>
+					</li>
+					<li>
+						<img src="img/index/application/application-icon-4.svg" width="38" height="38" loading="lazy" alt="">
+						<span>24/7</span>
+					</li>
+				</ul>
+				<div class="application__footer">
+					<a href="#" class="application__btn standard-btn">
+						Заявка
+					</a>
+				</div>
+			</section>
+		</main>
+
+		<footer class="footer">
+			<div class="footer__wrapper container">
+				<a href="index.html" class="footer__logo">
+					<img src="img/logo.svg" width="119" height="44" loading="lazy" alt="Логотип сайта" class="footer__logo--img">
+				</a>
+				<nav class="footer__nav">
+					<div class="footer__nav--block">
+						<h3>
+							Услуги
+						</h3>
+						<ul>
+							<li>
+								<a href="service-page.html">
+									Удаление информации
+								</a>
+							</li>
+							<li>
+								<a href="service-page.html">
+									Комплаенс
+								</a>
+							</li>
+							<li>
+								<a href="service-page.html">
+									Правовая поддержка
+								</a>
+							</li>
+							<li>
+								<a href="service-page.html">
+									Мониторинг
+								</a>
+							</li>
+							<li>
+								<a href="service-page.html">
+									Создание инфополя
+								</a>
+							</li>
+							<li>
+								<a href="service-page.html">
+									Раследования
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="footer__nav--block">
+						<h3>
+							Навигация
+						</h3>
+						<ul>
+							<li>
+								<a href="index.html">
+									Главная
+								</a>
+							</li>
+							<li>
+								<a href="#feedback-popup" class="open-popup">
+									Оставить заявку
+								</a>
+							</li>
+							<li>
+								<a href="about-us.html">
+									О компании
+								</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+				<div class="footer__social">
+					<ul>
+						<li>
+							<a href="#" title="Pinterest" style="--theme: #CB2027;">
+								<img src="img/social/pinterest.svg" width="38" height="38" loading="lazy" alt="">
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="footer__copy container">
+				Copyright all rights reserved – 2022 DELETE COMPROMAT
+			</div>
+		</footer>
+	</div>
+
+	<div class="feedback-popup popup" id="feedback-popup">
+		<div class="feedback-popup__wrapper popup-wrapper">
+			<div class="feedback-popup__bg popup-bg popup-close"></div>
+			<div class="feedback-popup__body popup-body">
+				<button type="button" class="feedback-popup__close-btn popup-close-btn popup-close" title="Закрыть">
+					<svg width="19" height="19" viewBox="0 0 19 19">
+						<use xlink:href="img/sprites.svg#close"></use>
+					</svg>
+				</button>
+				<form method="post" class="feedback-popup__form">
+					<h2 class="feedback-popup__title min-title">
+						Получите квалифицированную и профессиональную помощь
+					</h2>
+					<mark class="feedback-popup__accent-text">Ответим в течении 60 минут</mark>
+					<label>
+						<input type="text" name="name-or-company" placeholder="Имя/Компания" required class="input">
+					</label>
+					<label>
+						<input type="email" name="email" placeholder="E-mail" required class="input">
+					</label>
+					<div class="feedback-popup__form--footer">
+						<button class="standard-btn" type="submit">
+							Отправить
+						</button>
+					</div>
+				</form>
+				<div class="feedback-popup__gallery">
+					<div class="feedback-popup__gallery--body">
+						<div class="feedback-popup__gallery--item">
+							<div class="feedback-popup__gallery--image image-body">
+								<picture>
+									<source data-srcset="img/feedback/feedback-image-1.webp" type="image/webp">
+									<img data-src="img/feedback/feedback-image-1.jpg" alt="" width="312" height="215" class="lazy">
+								</picture>
+								<div class="image-filter"></div>
+							</div>
+						</div>
+						<div class="feedback-popup__gallery--item">
+							<div class="feedback-popup__gallery--image image-body">
+								<picture>
+									<source data-srcset="img/feedback/feedback-image-2.webp" type="image/webp">
+									<img data-src="img/feedback/feedback-image-2.jpg" alt="" width="178" height="178" class="lazy">
+								</picture>
+								<div class="image-filter"></div>
+							</div>
+						</div>
+						<div class="feedback-popup__gallery--item">
+							<div class="feedback-popup__gallery--logo">
+								<img src="img/logo-2.svg" width="96" height="38" loading="lazy" alt="">
+								<div class="image-filter"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/libs.min.js" defer></script>
+	<script src="js/main.min.js" defer></script>
+
+</body>
+
+</html>

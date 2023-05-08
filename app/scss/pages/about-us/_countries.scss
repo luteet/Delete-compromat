@@ -1,0 +1,28 @@
+.countries {
+
+	padding-top: 60px; padding-bottom: 60px;
+	background: var(--white);
+
+	margin-top: 90px;
+
+	@include _992 {
+		margin-top: 130px;
+		padding-top: 112px; padding-bottom: 128px;
+
+	}
+
+	// .countries__title
+
+	&__title {
+		text-align: center;
+	}
+
+	// .countries__list
+
+	&__list {
+		margin-top: 25px;
+		@include _992 {
+			margin-top: 47px;
+		}
+	}
+}

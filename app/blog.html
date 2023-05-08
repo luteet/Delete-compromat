@@ -1,0 +1,119 @@
+@@include("html/_header.html", {
+	"class": "",
+})
+
+	<main class="main">
+		@@include("html/_breadcrumbs.html")
+		<section class="blog container">
+			<h2 class="blog__title title">
+				Удаление ссылок из яндекса без суда
+			</h2>
+			<div class="blog__aside">
+				<nav class="blog__nav last-post-nav">
+					<h3 class="min-title">Последнее</h3>
+					<ul>
+						<li>
+							<a href="#">
+								Удаление ссылок из яндекса без суда
+								<svg width="16" height="17" viewBox="0 0 16 17">
+									<use xlink:href="img/sprites.svg#arrow-next"></use>
+								</svg>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Удаление ссылок из яндекса без суда
+								<svg width="16" height="17" viewBox="0 0 16 17">
+									<use xlink:href="img/sprites.svg#arrow-next"></use>
+								</svg>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Требование об удаление инфромации о сайта
+								<svg width="16" height="17" viewBox="0 0 16 17">
+									<use xlink:href="img/sprites.svg#arrow-next"></use>
+								</svg>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Удаление ссылок из яндекса без суда
+								<svg width="16" height="17" viewBox="0 0 16 17">
+									<use xlink:href="img/sprites.svg#arrow-next"></use>
+								</svg>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Удаление ссылок из яндекса без суда
+								<svg width="16" height="17" viewBox="0 0 16 17">
+									<use xlink:href="img/sprites.svg#arrow-next"></use>
+								</svg>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+			<div class="blog__main">
+				<ul class="blog__list">
+					@@loop("html/_blog-item.html", [
+						{
+							"image": '1',
+							"title": "Требование об удалении информации с сайта"
+						},
+						{
+							"image": '2',
+							"title": "Удаление ссылок из яндекса без суда"
+						},
+						{
+							"image": '1',
+							"title": "Требование об удалении информации с сайта"
+						},
+						{
+							"image": '2',
+							"title": "Удаление ссылок из яндекса без суда"
+						},
+						{
+							"image": '1',
+							"title": "Требование об удалении информации с сайта"
+						},
+						{
+							"image": '2',
+							"title": "Удаление ссылок из яндекса без суда"
+						},
+					])
+				</ul>
+				<div class="blog__footer">
+					<div class="blog__pagination pagination">
+						<a href="#" class="pagination__arrow _prev" title="Previous page">
+							<svg width="16" height="17" viewBox="0 0 16 17">
+								<use xlink:href="img/sprites.svg#arrow-prev"></use>
+							</svg>
+						</a>
+						<div class="pagination__list">
+							<a href="#">
+								1
+							</a>
+							<a href="#">
+								2
+							</a>
+							<a href="#">
+								...
+							</a>
+							<a href="#">
+								9
+							</a>
+						</div>
+						<a href="#" class="pagination__arrow _next" title="Next page">
+							<svg width="16" height="17" viewBox="0 0 16 17">
+								<use xlink:href="img/sprites.svg#arrow-next"></use>
+							</svg>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+@@include("html/_footer.html")

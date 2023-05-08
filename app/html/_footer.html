@@ -1,0 +1,145 @@
+		<footer class="footer">
+			<div class="footer__wrapper container">
+				<a href="index.html" class="footer__logo">
+					<img src="img/logo.svg" width="119" height="44" loading="lazy" alt="Логотип сайта" class="footer__logo--img">
+				</a>
+				<nav class="footer__nav">
+					<div class="footer__nav--block">
+						<h3>
+							Услуги
+						</h3>
+						<ul>
+							<li>
+								<a href="service-page.html">
+									Удаление информации
+								</a>
+							</li>
+							<li>
+								<a href="service-page.html">
+									Комплаенс
+								</a>
+							</li>
+							<li>
+								<a href="service-page.html">
+									Правовая поддержка
+								</a>
+							</li>
+							<li>
+								<a href="service-page.html">
+									Мониторинг
+								</a>
+							</li>
+							<li>
+								<a href="service-page.html">
+									Создание инфополя
+								</a>
+							</li>
+							<li>
+								<a href="service-page.html">
+									Раследования
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="footer__nav--block">
+						<h3>
+							Навигация
+						</h3>
+						<ul>
+							<li>
+								<a href="index.html">
+									Главная
+								</a>
+							</li>
+							<li>
+								<a href="#feedback-popup" class="open-popup">
+									Оставить заявку
+								</a>
+							</li>
+							<li>
+								<a href="about-us.html">
+									О компании
+								</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+				<div class="footer__social">
+					<ul>
+						<li>
+							<a href="#" title="Pinterest" style="--theme: #CB2027;">
+								<img src="img/social/pinterest.svg" width="38" height="38" loading="lazy" alt="">
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="footer__copy container">
+				Copyright all rights reserved – 2022 DELETE COMPROMAT
+			</div>
+		</footer>
+	</div>
+
+	<div class="feedback-popup popup" id="feedback-popup">
+		<div class="feedback-popup__wrapper popup-wrapper">
+			<div class="feedback-popup__bg popup-bg popup-close"></div>
+			<div class="feedback-popup__body popup-body">
+				<button type="button" class="feedback-popup__close-btn popup-close-btn popup-close" title="Закрыть">
+					<svg width="19" height="19" viewBox="0 0 19 19">
+						<use xlink:href="img/sprites.svg#close"></use>
+					</svg>
+				</button>
+				<form method="post" class="feedback-popup__form">
+					<h2 class="feedback-popup__title min-title">
+						Получите квалифицированную и профессиональную помощь
+					</h2>
+					<mark class="feedback-popup__accent-text">Ответим в течении 60 минут</mark>
+					<label>
+						<input type="text" name="name-or-company" placeholder="Имя/Компания" required class="input">
+					</label>
+					<label>
+						<input type="email" name="email" placeholder="E-mail" required class="input">
+					</label>
+					<div class="feedback-popup__form--footer">
+						<button class="standard-btn" type="submit">
+							Отправить
+						</button>
+					</div>
+				</form>
+				<div class="feedback-popup__gallery">
+					<div class="feedback-popup__gallery--body">
+						<div class="feedback-popup__gallery--item">
+							<div class="feedback-popup__gallery--image image-body">
+								<picture>
+									<source data-srcset="img/feedback/feedback-image-1.webp" type="image/webp">
+									<img data-src="img/feedback/feedback-image-1.jpg" alt="" width="312" height="215" class="lazy">
+								</picture>
+								<div class="image-filter"></div>
+							</div>
+						</div>
+						<div class="feedback-popup__gallery--item">
+							<div class="feedback-popup__gallery--image image-body">
+								<picture>
+									<source data-srcset="img/feedback/feedback-image-2.webp" type="image/webp">
+									<img data-src="img/feedback/feedback-image-2.jpg" alt="" width="178" height="178" class="lazy">
+								</picture>
+								<div class="image-filter"></div>
+							</div>
+						</div>
+						<div class="feedback-popup__gallery--item">
+							<div class="feedback-popup__gallery--logo">
+								<img src="img/logo-2.svg" width="96" height="38" loading="lazy" alt="">
+								<div class="image-filter"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/libs.min.js" defer></script>
+	<script src="js/main.min.js" defer></script>
+
+</body>
+</html>

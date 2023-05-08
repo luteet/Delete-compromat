@@ -1,0 +1,78 @@
+.add-comment {
+
+	margin-top: 60px;
+	padding-top: 60px; padding-bottom: 90px;
+
+	@include _992 {
+		margin-top: 101px;
+		padding-top: 99px; padding-bottom: 104px;
+	}
+
+	// .add-comment__title
+
+	&__title {
+	}
+
+	// .add-comment__text
+
+	&__text {
+		display: block;
+		margin-top: 12px;
+		font-size: 1.125rem;
+		
+		@include _768 {
+			font-size: 1.125rem;
+		}
+		
+		@include _992 {
+			font-size: 1.25rem;
+		}
+		line-height: 140%;
+		color: #EFEFEF;
+	}
+
+	// .add-comment__form
+
+	&__form {
+
+		max-width: 1496px;
+
+		display: flex;
+		flex-direction: column;
+
+		label {
+			margin-top: 30px;
+			display: block;
+		}
+
+		// .add-comment__form--row
+
+		&--row {
+			@include _550 {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 0 20px;
+			}
+		}
+
+		// .add-comment__form--footer
+
+		&--footer {
+		}
+
+		.checkbox {
+			width: 100%;
+			margin-top: 20px;
+
+			display: flex;
+			
+		}
+
+		[type="submit"] {
+			align-self: self-end;
+			padding: 20px 48px;
+
+			margin-top: 30px;
+		}
+	}
+}

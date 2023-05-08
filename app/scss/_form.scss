@@ -1,0 +1,85 @@
+input, textarea {
+	&::placeholder {
+		transition: opacity .2s ease;
+		opacity: 1;
+	}
+	
+	&:focus::placeholder {
+		opacity: 0;
+	}
+}
+
+.input, .textarea {
+	background: #FFFFFF;
+	border-radius: 2px;
+
+	padding: 20px 24px;
+
+	color: #434343;
+	line-height: 150%;
+
+	width: 100%;
+
+	transition: color .2s ease;
+	&:focus {
+		color: var(--black);
+	}
+}
+
+.textarea {
+	resize: none;
+}
+
+.checkbox {
+
+	display: flex;
+	align-items: center;
+
+	&-input {
+		position: absolute;
+		width: 1px; height: 1px;
+		margin: -1px; padding: 0;
+		border: 0;
+		
+		white-space: nowrap;
+		clip-path: inset(100%);
+		clip: rect(0 0 0 0);
+		overflow: hidden;
+	}
+
+	&-input:checked + &-element::before {
+		opacity: 1;
+	}
+
+	&-element {
+		position: relative;
+		display: block;
+		flex: 0 0 30px;
+		width: 30px; height: 30px;
+		border: 1px solid #7E7E7E;
+		border-radius: 2px;
+
+		cursor: pointer;
+
+		margin-right: 10px;
+
+		&::before {
+			content: '';
+			position: absolute;
+			left: 0; top: 0;
+			width: 100%; height: 100%;
+			background: var(--check-dark)
+			center / 35% no-repeat;
+
+			transition: opacity .2s ease;
+			opacity: 0;
+		}
+	}
+
+	
+}
+
+.dark-section .checkbox-element::before {
+	background: var(--check-light)
+	center / 35% no-repeat;
+}

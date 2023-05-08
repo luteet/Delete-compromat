@@ -1,0 +1,140 @@
+.gallery-block {
+
+	// .gallery-block__body
+
+	&__body {
+		background: var(--text-color-2);
+		border-radius: 10px;
+
+		position: relative;
+		padding: 15px 15px 0 15px;
+		@include _550 {
+			padding: 30px 30px 0 30px;
+		}
+
+	}
+
+	&._column-end-min &__item:last-child {
+		width: 50%; min-height: 150px;
+		justify-self: end;
+		margin-bottom: -15px;
+		@include _550 {
+			margin-bottom: -30px;
+			min-height: 211px;
+		}
+	}
+
+	&._row & {
+		&__wrapper {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		&__image {
+			min-height: 250px;
+			@include _550 {
+				min-height: 379px;
+			}
+		}
+
+		&__item {
+			&:first-child {
+				margin-bottom: -15px;
+			}
+			&:last-child {
+				margin-bottom: -25px; margin-top: 20px;
+				@include _550 {
+					margin-bottom: -40px;
+				}
+			}
+		}
+	}
+
+	&._column-start & {
+		&__item:last-child {
+			justify-self: start;
+			width: 60%; min-height: 150px;
+			@include _550 {
+				min-height: 211px;
+			}
+		}
+	}
+
+	&._column-end & {
+		&__item:last-child {
+			justify-self: end;
+			width: 75%; min-height: 150px;
+			@include _550 {
+				min-height: 209px;
+			}
+		}
+	}
+
+	&__wrapper {
+		margin-bottom: 0px;
+
+		display: grid;
+		gap: 10px;
+		@include _550 {
+			gap: 20px;
+		}
+	}
+
+	// .gallery-block__text
+
+	&__text {
+		position: absolute;
+		left: 30px; bottom: 30px;
+		
+		width: calc(80% - 60px); //height: calc(100% - 30px);
+		max-height: 100%;
+		overflow: hidden;
+
+		font-weight: 700;
+		font-size: 2rem;
+		@include _550 {
+			font-size: 2.5rem;
+			transform: translate(0,-50%);
+			top: 50%; bottom: auto;
+		}
+		
+		@include _768 {
+			font-size: 3rem;
+		}
+		
+		@include _992 {
+			font-size: 4rem;
+		}
+		@media (min-width: 1200px) {
+			font-size: 5.625rem;
+		}
+		line-height: 105.555556%;
+		color: rgba(230, 230, 230, 0.06);
+
+		word-break: break-all;
+
+		user-select: none; pointer-events: none;
+	}
+
+	// .gallery-block__item
+
+	&__item {
+		display: flex;
+		&:last-child {
+			margin-bottom: -20px;
+			@include _550 {
+				margin-bottom: -30px;
+			}
+		}
+	}
+
+	// .gallery-block__image
+
+	&__image {
+		min-height: 100%;
+
+		img {
+			background: #C2C2C2;
+			border-radius: 10px;
+		}
+	}
+}

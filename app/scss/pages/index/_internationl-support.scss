@@ -1,0 +1,147 @@
+.international-support {
+
+	margin-top: 90px;
+
+	padding-top: 60px;
+
+	@include _992 {
+		padding-top: 113px;
+	}
+	background: var(--white);
+
+	z-index: 3;
+	// .international-support__content
+
+	&__content {
+		@include _992 {
+			display: flex;
+			align-items: flex-end;
+		}
+	}
+
+	// .international-support__title
+
+	&__title {
+		@include _992 {
+			flex: 0 1 35%;
+		}
+	}
+
+	// .international-support__text
+
+	&__text {
+
+		margin-top: 30px;
+		
+		@include _992 {
+			flex: 0 1 65%;
+			padding-left: 30px; margin-top: 0;
+		}
+
+		mark {
+			display: block;
+			margin-bottom: 10px;
+		}
+	}
+
+	// .international-support__statistics
+
+	&__statistics {
+
+		padding-top: 50px;
+
+		display: grid;
+		gap: 20px;
+		@include _768 {
+			grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+		}
+
+		li {
+			display: grid;
+			grid-template-columns: 55px auto;
+			@include _550 {
+				grid-template-columns: 75px auto;
+			}
+
+			padding-top: 30px; padding-bottom: 23px;
+
+			border-top: 1px solid #D5D5D5;
+			border-bottom: 1px solid #D5D5D5;
+		}
+
+		h3 {
+			align-self: end;
+
+			font-weight: 600;
+			font-size: 1.25rem;
+			
+			@include _768 {
+				font-size: 1.5rem;
+			}
+			
+			@include _992 {
+				font-size: 1.75rem;
+			}
+			line-height: 92.857143%;
+			color: #1D1D1D;
+		}
+
+		p {
+			margin-top: 8px;
+
+			font-size: 1rem;
+			@include _992 {
+				font-size: 1.125rem;
+			}
+			line-height: 133.333333%;
+		}
+
+		// .international-support__statistics--icon
+
+		&--icon {
+			grid-row: 2 span;
+			
+
+			width: 40px; height: 40px;
+			@include _550 {
+				align-self: center;
+				width: 55px; height: 55px;
+			}
+
+			img {
+				width: 75%; height: auto;
+			}
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			border: 1px solid #D4D4D4;
+		}
+	}
+
+	// .international-support__footer
+
+	&__footer {
+		margin-top: 40px;
+		
+
+		display: flex;
+		justify-content: center;
+	}
+
+	// .international-support__btn-wrapper
+
+	&__btn-wrapper {
+		margin-bottom: -45px;
+		@include _992 {
+			margin-bottom: -70px;
+		}
+	}
+
+	// .international-support__btn
+
+	&__btn {
+		
+	}
+}

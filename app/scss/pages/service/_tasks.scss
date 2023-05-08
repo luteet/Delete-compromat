@@ -1,0 +1,145 @@
+.tasks {
+
+	padding-top: 60px; padding-bottom: 60px;
+
+	display: grid;
+	@include _992 {
+		grid-template-columns: 1fr 1fr;
+		gap: 50px 30px;
+
+		padding-top: 121px; padding-bottom: 106px;
+	}
+	
+	@media (min-width: 1200px) {
+		gap: 50px 90px;
+	}
+
+	> * {
+		align-self: center;
+	}
+
+	// .tasks__content
+
+	&__content {
+		ul {
+			margin-top: 15px; margin-bottom: 10px;
+
+			display: grid;
+			
+			gap: 10px;
+			@include _550 {
+				gap: 20px;
+				grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+			}
+
+			li {
+				padding: 12px 11px;
+				border: 1px solid #888888;
+				border-radius: 5px;
+
+				display: flex;
+				align-items: center;
+
+				@include _992 {
+					font-size: 1.125rem;
+				}
+				font-size: 1rem;
+				line-height: 156%;
+				color: #434343;
+
+				&::before {
+					content: '';
+					display: block;
+					width: 29px; height: 29px; flex: 0 0 29px;
+					margin-right: 10px;
+					background: #FFF var(--check-dark) center / 35% no-repeat;
+				}
+			}
+		}
+
+		p {
+			padding-top: 15px;
+
+			font-weight: 500;
+			@include _992 {
+				font-size: 1.125rem;
+			}
+			font-size: 1rem;
+			line-height: 155.555556%;
+			color: #2D2D2D;
+
+		}
+	}
+
+	// .tasks__title
+
+	&__title {
+		margin-bottom: 20px;
+	}
+
+	// .tasks__gallery
+
+	&__gallery {
+
+		margin-top: 30px;
+
+		@include _992 {
+			margin-top: 0;
+		}
+
+		// .tasks__gallery--body
+
+		&--body {
+			padding: 10px;
+			@include _550 {
+				padding: 31px 30px 0 30px;
+				gap: 20px;
+			}
+			
+			position: relative;
+			&::before {
+				content: '';
+				position: absolute;
+				left: 0; top: 0;
+				width: 100%; height: calc(100% - 70px);
+				z-index: -1;
+				background: #232323;
+				border-radius: 10px;
+			}
+
+			display: grid;
+			grid-template-columns: repeat(7, 1fr);
+			gap: 10px;
+		}
+
+		// .tasks__gallery--item
+
+		&--item {
+			min-height: 120px;
+			&:nth-child(1) {
+				grid-column: 4 span;
+			}
+
+			&:nth-child(2) {
+				grid-column: 3 span; grid-row: 2;
+				
+			}
+
+			&:nth-child(3) {
+				grid-column: 4 span; grid-row: 2;
+				
+			}
+		}
+
+		// .tasks__gallery--image
+
+		&--image {
+			min-height: 100%;
+
+			img {
+				background: #C2C2C2;
+				border-radius: 10px;
+			}
+		}
+	}
+}

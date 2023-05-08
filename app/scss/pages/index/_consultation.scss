@@ -1,0 +1,58 @@
+.consultation {
+
+	padding-top: 60px; padding-bottom: 90px;
+	@include _992 {
+		padding-top: 110px; padding-bottom: 130px;
+	}
+
+	// .consultation__header
+
+	&__header {
+		display: grid;
+		
+		@include _992 {
+			gap: 50px;
+			grid-template-columns: min-content auto;
+		}
+
+		@media (min-width: 1200px) {
+			grid-template-columns: auto auto;
+		}
+		
+
+		max-width: 1500px;
+	}
+
+	// .consultation__title
+
+	&__title {
+	}
+
+	// .consultation__text
+
+	&__text {
+		align-self: center;
+		margin-top: 10px;
+		@include _992 {
+			margin-top: 0;
+		}
+		p {
+			padding-top: 10px;
+		}
+	}
+
+	// .consultation__form
+
+	&__form {
+		margin-top: 43px;
+
+		display: grid;
+		gap: 21px;
+		@include _768 {
+			grid-template-columns: 1fr 1fr;
+		}
+		@include _992 {
+			grid-template-columns: auto auto 283px;
+		}
+	}
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		
+		.image-body {
+			width: 100%; position: relative;
+		}
+
+		.image-body img {
+			position: absolute;
+			left: 0; top: 0;
+			width: 100%; height: 100%;
+			object-fit: cover;
+		}
+
+		.image-filter {
+			position: absolute;
+			left: 0; top: 0;
+			width: 100%; height: 100%;
+			background: 0 0 / 90px repeat;
+			opacity: 0.1;
+			pointer-events: none;
+		}
+
+		@media (min-width: 550px) {
+			.image-filter {
+				background: 0 0 / 250px repeat;
+				opacity: 0.05;
+			}
+		}
+
+		.lazy {
+			opacity: 0;
+		}
+
+		.lazy.loaded {
+			opacity: 1;
+		}
+
+	</style>
+	<link rel="stylesheet" href="css/style-critical.min.css">
+	<link rel="stylesheet" href="css/style.min.css" media="print" onload="this.media='all'; this.onload=null;">
+	<script>
+		document.querySelector('html').style.setProperty("--vh", window.innerHeight * 0.01 + "px");
+	</script>
+</head>
+<body>
+	<div class="image-filter-base" data-url="img/filter.webp"></div>
+	<div class="wrapper">
+		<header class="header container@@class">
+			<div class="header__wrapper">
+				<a href="index.html" class="header__logo">
+					<img src="img/logo.svg" alt="Logo" width="70" height="27" loading="lazy" class="header__logo--img">
+				</a>
+				<nav class="header__nav">
+					<div class="header__nav--body">
+						<ul class="header__nav--list">
+							<li>
+								<a href="#" aria-label="Главная">
+									<span>Главная</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" aria-label="Блог">
+									<span>Блог</span>
+								</a>
+								<ul>
+									<li>
+										<a href="#">
+											Мониторинг негативной информации
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Удаление негативной информации
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Проведение расследований
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Оперативное реагирование
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Помощь в прохождении комплаенса
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#" aria-label="О нас">
+									<span>О нас</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" aria-label="Услуги">
+									<span>Услуги</span>
+								</a>
+								<ul>
+									<li>
+										<a href="#">
+											Мониторинг негативной информации
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Удаление негативной информации
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Проведение расследований
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Оперативное реагирование
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Помощь в прохождении комплаенса
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#feedback-popup" aria-label="Связаться">
+									<span>Связаться</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+				<button class="header__burger" type="button" aria-label="Menu">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+			</div>
+		</header>

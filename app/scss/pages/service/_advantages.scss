@@ -1,0 +1,71 @@
+.service-advantages {
+
+
+	padding-top: 60px; padding-bottom: 60px;
+
+	@include _992 {
+		padding-top: 114px; padding-bottom: 130px;
+	}
+
+
+	// .service-advantages__title
+
+	&__title {
+	}
+
+	// .service-advantages__list
+
+	&__list {
+		@include _992 {
+			margin-top: 40px;
+		}
+
+		margin-top: 20px;
+
+		display: grid;
+		gap: 10px;
+		@include _550 {
+			gap: 22px;
+			grid-template-columns: repeat(auto-fit, minmax(350px, auto));
+		}
+		
+
+		li {
+			padding: 20px 15px;
+			@include _768 {
+				padding: 31px 39px 17px 39px;
+			}
+
+			background: #FFFFFF;
+			border: 1px solid #888888;
+			border-radius: 10px;
+
+
+
+			h3 {
+				padding-top: 11px;
+
+				font-weight: 600;
+				font-size: 1.175rem;
+				
+				@include _768 {
+					font-size: 1.25rem;
+				}
+				
+				@include _992 {
+					font-size: 1.375rem;
+				}
+				line-height: 118.181818%;
+				color: #1D1D1D;
+
+			}
+
+			p {
+				padding-top: 9px;
+
+				line-height: 150%;
+				color: #434343;
+			}
+		}
+	}
+}

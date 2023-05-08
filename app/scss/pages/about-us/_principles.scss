@@ -1,0 +1,65 @@
+.principles {
+
+	padding-top: 30px; 
+
+	// .principles__list
+
+	&__list {
+		padding-top: 27px;
+
+		display: grid;
+		@include _550 {
+			grid-template-columns: repeat(auto-fit, minmax(350px, auto));
+		}
+		gap: 10px;
+		@include _768 {
+			gap: 21px;
+			padding-top: 47px;
+		}
+	}
+
+	// .principles__card
+
+	&__card {
+		border: 1px solid #888888;
+		border-radius: 5px;
+
+		padding: 12px 11px;
+
+		font-weight: 500;
+		font-size: 1rem;
+		@include _992 {
+			font-size: 1.125rem;
+		}
+		line-height: 144.444444%;
+		color: #1D1D1D;
+
+
+		&::before {
+			content: '';
+			display: block;
+			width: 29px; height: 29px;
+			background: #FFF var(--check-dark) center / 35% no-repeat;
+			margin-bottom: 8px;
+		}
+	}
+
+	// .principles__footer
+
+	&__footer {
+		padding-top: 40px;
+
+		display: flex;
+		justify-content: center;
+	}
+
+	// .principles__btn-wrapper
+
+	&__btn-wrapper {
+	}
+
+	// .principles__btn
+
+	&__btn {
+	}
+}

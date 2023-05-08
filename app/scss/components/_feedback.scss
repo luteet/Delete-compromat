@@ -1,0 +1,52 @@
+.feedback {
+
+	padding-top: 20px; padding-bottom: 60px;
+
+	display: flex;
+	align-items: flex-end;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	@include _992 {
+		justify-content: stretch;
+		padding-top: 70px; padding-bottom: 70px;
+	}
+
+	// .feedback__content
+
+	&__content {
+		padding-right: 50px;
+		margin-top: 30px; margin-bottom: 30px;
+
+		p {
+			@include _992 {
+				font-size: 1.125rem;
+			}
+
+			padding-top: 10px;
+			font-size: 1rem;
+			font-weight: 600;
+			line-height: 133%;
+		}
+	}
+
+	// .feedback__accent-text
+
+	&__accent-text {
+	}
+
+	// .feedback__title
+
+	&__title {
+	}
+
+	// .feedback__btn-wrapper
+
+	&__btn-wrapper {
+	}
+
+	// .feedback__btn
+
+	&__btn {
+	}
+}

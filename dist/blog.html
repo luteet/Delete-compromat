@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.image-body {
+			width: 100%;
+			position: relative;
+		}
+
+		.image-body img {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		.image-filter {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background: 0 0 / 90px repeat;
+			opacity: 0.1;
+			pointer-events: none;
+		}
+
+		@media (min-width: 550px) {
+			.image-filter {
+				background: 0 0 / 250px repeat;
+				opacity: 0.05;
+			}
+		}
+
+		.lazy {
+			opacity: 0;
+		}
+
+		.lazy.loaded {
+			opacity: 1;
+		}
+	</style>
+	<link rel="stylesheet" href="css/style-critical.min.css">
+	<link rel="stylesheet" href="css/style.min.css" media="print" onload="this.media='all'; this.onload=null;">
+	<script>
+		document.querySelector('html').style.setProperty("--vh", window.innerHeight * 0.01 + "px");
+	</script>
+</head>
+
+<body>
+	<div class="image-filter-base" data-url="img/filter.webp"></div>
+	<div class="wrapper">
+		<header class="header container">
+			<div class="header__wrapper">
+				<a href="index.html" class="header__logo">
+					<img src="img/logo.svg" alt="Logo" width="70" height="27" loading="lazy" class="header__logo--img">
+				</a>
+				<nav class="header__nav">
+					<div class="header__nav--body">
+						<ul class="header__nav--list">
+							<li>
+								<a href="#" aria-label="Главная">
+									<span>Главная</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" aria-label="Блог">
+									<span>Блог</span>
+								</a>
+								<ul>
+									<li>
+										<a href="#">
+											Мониторинг негативной информации
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Удаление негативной информации
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Проведение расследований
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Оперативное реагирование
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Помощь в прохождении комплаенса
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#" aria-label="О нас">
+									<span>О нас</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" aria-label="Услуги">
+									<span>Услуги</span>
+								</a>
+								<ul>
+									<li>
+										<a href="#">
+											Мониторинг негативной информации
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Удаление негативной информации
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Проведение расследований
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Оперативное реагирование
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Помощь в прохождении комплаенса
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#feedback-popup" aria-label="Связаться">
+									<span>Связаться</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+				<button class="header__burger" type="button" aria-label="Menu">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+			</div>
+		</header>
+
+		<main class="main">
+			<div class="breadcrumbs container">
+				<a class="breadcrumbs__link" href="#">
+					<span>Главная</span>
+				</a>
+				<span class="breadcrumbs__separator"> › </span>
+				<span class="breadcrumbs__current">Sample Post 3</span>
+			</div>
+			<section class="blog container">
+				<h2 class="blog__title title">
+					Удаление ссылок из яндекса без суда
+				</h2>
+				<div class="blog__aside">
+					<nav class="blog__nav last-post-nav">
+						<h3 class="min-title">Последнее</h3>
+						<ul>
+							<li>
+								<a href="#">
+									Удаление ссылок из яндекса без суда
+									<svg width="16" height="17" viewBox="0 0 16 17">
+										<use xlink:href="img/sprites.svg#arrow-next"></use>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Удаление ссылок из яндекса без суда
+									<svg width="16" height="17" viewBox="0 0 16 17">
+										<use xlink:href="img/sprites.svg#arrow-next"></use>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Требование об удаление инфромации о сайта
+									<svg width="16" height="17" viewBox="0 0 16 17">
+										<use xlink:href="img/sprites.svg#arrow-next"></use>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Удаление ссылок из яндекса без суда
+									<svg width="16" height="17" viewBox="0 0 16 17">
+										<use xlink:href="img/sprites.svg#arrow-next"></use>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Удаление ссылок из яндекса без суда
+									<svg width="16" height="17" viewBox="0 0 16 17">
+										<use xlink:href="img/sprites.svg#arrow-next"></use>
+									</svg>
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<div class="blog__main">
+					<ul class="blog__list">
+						<li class="blog__card">
+							<div class="blog__card--image image-body">
+								<picture>
+									<source data-srcset="img/blog/blog-image-1.webp" type="image/webp">
+									<img data-src="img/blog/blog-image-1.jpg" alt="" width="1304" height="609" class="lazy">
+								</picture>
+							</div>
+							<div class="blog__card--header">
+								<div class="blog__card--logo">
+									<img src="img/logo.svg" width="119" height="44" loading="lazy" alt="">
+								</div>
+								<div class="blog__card--comments">
+									<svg width="24" height="24" viewBox="0 0 24 24">
+										<use xlink:href="img/sprites.svg#comment"></use>
+									</svg>
+									Нет комментариев
+								</div>
+							</div>
+							<h3 class="blog__card--title title _min">
+								<a href="blog-page.html">
+									Требование об удалении информации с сайта
+								</a>
+							</h3>
+							<div class="blog__card--text">
+								<p>
+									Досудебное требование об удаление информации с сайта.
+								</p>
+								<p>
+									Досудебное требование об удаление информации с сайта. Физические и юридические лица имеют право на защиту своих интересов в сети интернет путем направления требований ...
+								</p>
+								<p>
+									Досудебное требование об удаление информации с сайта. Физические и юридические лица имеют право на защиту своих интересов в сети интернет путем направления требований ...
+								</p>
+							</div>
+							<div class="blog__card--footer">
+								<div class="blog__card--btn-wrapper btn-wrapper">
+									<a href="#" class="blog__card--btn btn _min">
+										Читать
+									</a>
+								</div>
+							</div>
+						</li>
+						<li class="blog__card">
+							<div class="blog__card--image image-body">
+								<picture>
+									<source data-srcset="img/blog/blog-image-2.webp" type="image/webp">
+									<img data-src="img/blog/blog-image-2.jpg" alt="" width="1304" height="609" class="lazy">
+								</picture>
+							</div>
+							<div class="blog__card--header">
+								<div class="blog__card--logo">
+									<img src="img/logo.svg" width="119" height="44" loading="lazy" alt="">
+								</div>
+								<div class="blog__card--comments">
+									<svg width="24" height="24" viewBox="0 0 24 24">
+										<use xlink:href="img/sprites.svg#comment"></use>
+									</svg>
+									Нет комментариев
+								</div>
+							</div>
+							<h3 class="blog__card--title title _min">
+								<a href="blog-page.html">
+									Удаление ссылок из яндекса без суда
+								</a>
+							</h3>
+							<div class="blog__card--text">
+								<p>
+									Досудебное требование об удаление информации с сайта.
+								</p>
+								<p>
+									Досудебное требование об удаление информации с сайта. Физические и юридические лица имеют право на защиту своих интересов в сети интернет путем направления требований ...
+								</p>
+								<p>
+									Досудебное требование об удаление информации с сайта. Физические и юридические лица имеют право на защиту своих интересов в сети интернет путем направления требований ...
+								</p>
+							</div>
+							<div class="blog__card--footer">
+								<div class="blog__card--btn-wrapper btn-wrapper">
+									<a href="#" class="blog__card--btn btn _min">
+										Читать
+									</a>
+								</div>
+							</div>
+						</li>
+						<li class="blog__card">
+							<div class="blog__card--image image-body">
+								<picture>
+									<source data-srcset="img/blog/blog-image-1.webp" type="image/webp">
+									<img data-src="img/blog/blog-image-1.jpg" alt="" width="1304" height="609" class="lazy">
+								</picture>
+							</div>
+							<div class="blog__card--header">
+								<div class="blog__card--logo">
+									<img src="img/logo.svg" width="119" height="44" loading="lazy" alt="">
+								</div>
+								<div class="blog__card--comments">
+									<svg width="24" height="24" viewBox="0 0 24 24">
+										<use xlink:href="img/sprites.svg#comment"></use>
+									</svg>
+									Нет комментариев
+								</div>
+							</div>
+							<h3 class="blog__card--title title _min">
+								<a href="blog-page.html">
+									Требование об удалении информации с сайта
+								</a>
+							</h3>
+							<div class="blog__card--text">
+								<p>
+									Досудебное требование об удаление информации с сайта.
+								</p>
+								<p>
+									Досудебное требование об удаление информации с сайта. Физические и юридические лица имеют право на защиту своих интересов в сети интернет путем направления требований ...
+								</p>
+								<p>
+									Досудебное требование об удаление информации с сайта. Физические и юридические лица имеют право на защиту своих интересов в сети интернет путем направления требований ...
+								</p>
+							</div>
+							<div class="blog__card--footer">
+								<div class="blog__card--btn-wrapper btn-wrapper">
+									<a href="#" class="blog__card--btn btn _min">
+										Читать
+									</a>
+								</div>
+							</div>
+						</li>
+						<li class="blog__card">
+							<div class="blog__card--image image-body">
+								<picture>
+									<source data-srcset="img/blog/blog-image-2.webp" type="image/webp">
+									<img data-src="img/blog/blog-image-2.jpg" alt="" width="1304" height="609" class="lazy">
+								</picture>
+							</div>
+							<div class="blog__card--header">
+								<div class="blog__card--logo">
+									<img src="img/logo.svg" width="119" height="44" loading="lazy" alt="">
+								</div>
+								<div class="blog__card--comments">
+									<svg width="24" height="24" viewBox="0 0 24 24">
+										<use xlink:href="img/sprites.svg#comment"></use>
+									</svg>
+									Нет комментариев
+								</div>
+							</div>
+							<h3 class="blog__card--title title _min">
+								<a href="blog-page.html">
+									Удаление ссылок из яндекса без суда
+								</a>
+							</h3>
+							<div class="blog__card--text">
+								<p>
+									Досудебное требование об удаление информации с сайта.
+								</p>
+								<p>
+									Досудебное требование об удаление информации с сайта. Физические и юридические лица имеют право на защиту своих интересов в сети интернет путем направления требований ...
+								</p>
+								<p>
+									Досудебное требование об удаление информации с сайта. Физические и юридические лица имеют право на защиту своих интересов в сети интернет путем направления требований ...
+								</p>
+							</div>
+							<div class="blog__card--footer">
+								<div class="blog__card--btn-wrapper btn-wrapper">
+									<a href="#" class="blog__card--btn btn _min">
+										Читать
+									</a>
+								</div>
+							</div>
+						</li>
+						<li class="blog__card">
+							<div class="blog__card--image image-body">
+								<picture>
+									<source data-srcset="img/blog/blog-image-1.webp" type="image/webp">
+									<img data-src="img/blog/blog-image-1.jpg" alt="" width="1304" height="609" class="lazy">
+								</picture>
+							</div>
+							<div class="blog__card--header">
+								<div class="blog__card--logo">
+									<img src="img/logo.svg" width="119" height="44" loading="lazy" alt="">
+								</div>
+								<div class="blog__card--comments">
+									<svg width="24" height="24" viewBox="0 0 24 24">
+										<use xlink:href="img/sprites.svg#comment"></use>
+									</svg>
+									Нет комментариев
+								</div>
+							</div>
+							<h3 class="blog__card--title title _min">
+								<a href="blog-page.html">
+									Требование об удалении информации с сайта
+								</a>
+							</h3>
+							<div class="blog__card--text">
+								<p>
+									Досудебное требование об удаление информации с сайта.
+								</p>
+								<p>
+									Досудебное требование об удаление информации с сайта. Физические и юридические лица имеют право на защиту своих интересов в сети интернет путем направления требований ...
+								</p>
+								<p>
+									Досудебное требование об удаление информации с сайта. Физические и юридические лица имеют право на защиту своих интересов в сети интернет путем направления требований ...
+								</p>
+							</div>
+							<div class="blog__card--footer">
+								<div class="blog__card--btn-wrapper btn-wrapper">
+									<a href="#" class="blog__card--btn btn _min">
+										Читать
+									</a>
+								</div>
+							</div>
+						</li>
+						<li class="blog__card">
+							<div class="blog__card--image image-body">
+								<picture>
+									<source data-srcset="img/blog/blog-image-2.webp" type="image/webp">
+									<img data-src="img/blog/blog-image-2.jpg" alt="" width="1304" height="609" class="lazy">
+								</picture>
+							</div>
+							<div class="blog__card--header">
+								<div class="blog__card--logo">
+									<img src="img/logo.svg" width="119" height="44" loading="lazy" alt="">
+								</div>
+								<div class="blog__card--comments">
+									<svg width="24" height="24" viewBox="0 0 24 24">
+										<use xlink:href="img/sprites.svg#comment"></use>
+									</svg>
+									Нет комментариев
+								</div>
+							</div>
+							<h3 class="blog__card--title title _min">
+								<a href="blog-page.html">
+									Удаление ссылок из яндекса без суда
+								</a>
+							</h3>
+							<div class="blog__card--text">
+								<p>
+									Досудебное требование об удаление информации с сайта.
+								</p>
+								<p>
+									Досудебное требование об удаление информации с сайта. Физические и юридические лица имеют право на защиту своих интересов в сети интернет путем направления требований ...
+								</p>
+								<p>
+									Досудебное требование об удаление информации с сайта. Физические и юридические лица имеют право на защиту своих интересов в сети интернет путем направления требований ...
+								</p>
+							</div>
+							<div class="blog__card--footer">
+								<div class="blog__card--btn-wrapper btn-wrapper">
+									<a href="#" class="blog__card--btn btn _min">
+										Читать
+									</a>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<div class="blog__footer">
+						<div class="blog__pagination pagination">
+							<a href="#" class="pagination__arrow _prev" title="Previous page">
+								<svg width="16" height="17" viewBox="0 0 16 17">
+									<use xlink:href="img/sprites.svg#arrow-prev"></use>
+								</svg>
+							</a>
+							<div class="pagination__list">
+								<a href="#">
+									1
+								</a>
+								<a href="#">
+									2
+								</a>
+								<a href="#">
+									...
+								</a>
+								<a href="#">
+									9
+								</a>
+							</div>
+							<a href="#" class="pagination__arrow _next" title="Next page">
+								<svg width="16" height="17" viewBox="0 0 16 17">
+									<use xlink:href="img/sprites.svg#arrow-next"></use>
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="footer">
+			<div class="footer__wrapper container">
+				<a href="index.html" class="footer__logo">
+					<img src="img/logo.svg" width="119" height="44" loading="lazy" alt="Логотип сайта" class="footer__logo--img">
+				</a>
+				<nav class="footer__nav">
+					<div class="footer__nav--block">
+						<h3>
+							Услуги
+						</h3>
+						<ul>
+							<li>
+								<a href="service-page.html">
+									Удаление информации
+								</a>
+							</li>
+							<li>
+								<a href="service-page.html">
+									Комплаенс
+								</a>
+							</li>
+							<li>
+								<a href="service-page.html">
+									Правовая поддержка
+								</a>
+							</li>
+							<li>
+								<a href="service-page.html">
+									Мониторинг
+								</a>
+							</li>
+							<li>
+								<a href="service-page.html">
+									Создание инфополя
+								</a>
+							</li>
+							<li>
+								<a href="service-page.html">
+									Раследования
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="footer__nav--block">
+						<h3>
+							Навигация
+						</h3>
+						<ul>
+							<li>
+								<a href="index.html">
+									Главная
+								</a>
+							</li>
+							<li>
+								<a href="#feedback-popup" class="open-popup">
+									Оставить заявку
+								</a>
+							</li>
+							<li>
+								<a href="about-us.html">
+									О компании
+								</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+				<div class="footer__social">
+					<ul>
+						<li>
+							<a href="#" title="Pinterest" style="--theme: #CB2027;">
+								<img src="img/social/pinterest.svg" width="38" height="38" loading="lazy" alt="">
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="footer__copy container">
+				Copyright all rights reserved – 2022 DELETE COMPROMAT
+			</div>
+		</footer>
+	</div>
+
+	<div class="feedback-popup popup" id="feedback-popup">
+		<div class="feedback-popup__wrapper popup-wrapper">
+			<div class="feedback-popup__bg popup-bg popup-close"></div>
+			<div class="feedback-popup__body popup-body">
+				<button type="button" class="feedback-popup__close-btn popup-close-btn popup-close" title="Закрыть">
+					<svg width="19" height="19" viewBox="0 0 19 19">
+						<use xlink:href="img/sprites.svg#close"></use>
+					</svg>
+				</button>
+				<form method="post" class="feedback-popup__form">
+					<h2 class="feedback-popup__title min-title">
+						Получите квалифицированную и профессиональную помощь
+					</h2>
+					<mark class="feedback-popup__accent-text">Ответим в течении 60 минут</mark>
+					<label>
+						<input type="text" name="name-or-company" placeholder="Имя/Компания" required class="input">
+					</label>
+					<label>
+						<input type="email" name="email" placeholder="E-mail" required class="input">
+					</label>
+					<div class="feedback-popup__form--footer">
+						<button class="standard-btn" type="submit">
+							Отправить
+						</button>
+					</div>
+				</form>
+				<div class="feedback-popup__gallery">
+					<div class="feedback-popup__gallery--body">
+						<div class="feedback-popup__gallery--item">
+							<div class="feedback-popup__gallery--image image-body">
+								<picture>
+									<source data-srcset="img/feedback/feedback-image-1.webp" type="image/webp">
+									<img data-src="img/feedback/feedback-image-1.jpg" alt="" width="312" height="215" class="lazy">
+								</picture>
+								<div class="image-filter"></div>
+							</div>
+						</div>
+						<div class="feedback-popup__gallery--item">
+							<div class="feedback-popup__gallery--image image-body">
+								<picture>
+									<source data-srcset="img/feedback/feedback-image-2.webp" type="image/webp">
+									<img data-src="img/feedback/feedback-image-2.jpg" alt="" width="178" height="178" class="lazy">
+								</picture>
+								<div class="image-filter"></div>
+							</div>
+						</div>
+						<div class="feedback-popup__gallery--item">
+							<div class="feedback-popup__gallery--logo">
+								<img src="img/logo-2.svg" width="96" height="38" loading="lazy" alt="">
+								<div class="image-filter"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/libs.min.js" defer></script>
+	<script src="js/main.min.js" defer></script>
+
+</body>
+
+</html>

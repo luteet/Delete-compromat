@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.image-body {
+			width: 100%;
+			position: relative;
+		}
+
+		.image-body img {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		.image-filter {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background: 0 0 / 90px repeat;
+			opacity: 0.1;
+			pointer-events: none;
+		}
+
+		@media (min-width: 550px) {
+			.image-filter {
+				background: 0 0 / 250px repeat;
+				opacity: 0.05;
+			}
+		}
+
+		.lazy {
+			opacity: 0;
+		}
+
+		.lazy.loaded {
+			opacity: 1;
+		}
+	</style>
+	<link rel="stylesheet" href="css/style-critical.min.css">
+	<link rel="stylesheet" href="css/style.min.css" media="print" onload="this.media='all'; this.onload=null;">
+	<script>
+		document.querySelector('html').style.setProperty("--vh", window.innerHeight * 0.01 + "px");
+	</script>
+</head>
+
+<body>
+	<div class="image-filter-base" data-url="img/filter.webp"></div>
+	<div class="wrapper">
+		<header class="header container">
+			<div class="header__wrapper">
+				<a href="index.html" class="header__logo">
+					<img src="img/logo.svg" alt="Logo" width="70" height="27" loading="lazy" class="header__logo--img">
+				</a>
+				<nav class="header__nav">
+					<div class="header__nav--body">
+						<ul class="header__nav--list">
+							<li>
+								<a href="#" aria-label="Главная">
+									<span>Главная</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" aria-label="Блог">
+									<span>Блог</span>
+								</a>
+								<ul>
+									<li>
+										<a href="#">
+											Мониторинг негативной информации
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Удаление негативной информации
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Проведение расследований
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Оперативное реагирование
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Помощь в прохождении комплаенса
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#" aria-label="О нас">
+									<span>О нас</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" aria-label="Услуги">
+									<span>Услуги</span>
+								</a>
+								<ul>
+									<li>
+										<a href="#">
+											Мониторинг негативной информации
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Удаление негативной информации
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Проведение расследований
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Оперативное реагирование
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Помощь в прохождении комплаенса
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#feedback-popup" aria-label="Связаться">
+									<span>Связаться</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+				<button class="header__burger" type="button" aria-label="Menu">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+			</div>
+		</header>
+
+		<main class="main">
+			<div class="breadcrumbs container">
+				<a class="breadcrumbs__link" href="#">
+					<span>Главная</span>
+				</a>
+				<span class="breadcrumbs__separator"> › </span>
+				<span class="breadcrumbs__current">Sample Post 3</span>
+			</div>
+			<section class="about-us-hero container _min-2">
+				<div class="about-us-hero__content">
+					<h1 class="about-us-hero__title main-title">
+						Мы предоставляем услуги по кризисному PR менеджменту.
+					</h1>
+					<span class="about-us-hero__hashtag">#Deletecompromat</span>
+					<div class="about-us-hero__min-image">
+						<div class="about-us-hero__min-image--body">
+							<picture>
+								<source data-srcset="img/index/hero/index-hero-image-2.webp" type="image/webp">
+								<img data-src="img/index/hero/index-hero-image-2.jpg" alt="" width="381" height="229" class="lazy">
+							</picture>
+							<div class="image-filter"></div>
+						</div>
+					</div>
+				</div>
+				<div class="about-us-hero__gallery">
+					<div class="about-us-hero__gallery--item">
+						<div class="about-us-hero__gallery--image image-body">
+							<picture>
+								<source data-srcset="img/index/hero/index-hero-image-1.webp" type="image/webp">
+								<img data-src="img/index/hero/index-hero-image-1.jpg" alt="" width="381" height="229" class="lazy">
+							</picture>
+							<div class="image-filter"></div>
+						</div>
+					</div>
+					<div class="about-us-hero__gallery--item">
+						<div class="about-us-hero__gallery--image image-body">
+							<picture>
+								<source data-srcset="img/services/services-image-8.webp" type="image/webp">
+								<img data-src="img/services/services-image-8.jpg" alt="" width="381" height="209" class="lazy">
+							</picture>
+							<div class="image-filter"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="competencies container">
+				<h2 class="competencies__title title">
+					В наши компетенции входят:
+				</h2>
+				<ul class="competencies__list">
+					<li class="competencies__card">
+						<img src="img/about-us/competencies/competencies-icon-1.svg" width="27" height="27" loading="lazy" alt="">
+						<b>Мониторинг негативной иформации</b>
+					</li>
+					<li class="competencies__card">
+						<img src="img/about-us/competencies/competencies-icon-2.svg" width="27" height="27" loading="lazy" alt="">
+						<b>Удаление негативных материалов и отзывов</b>
+					</li>
+					<li class="competencies__card">
+						<img src="img/about-us/competencies/competencies-icon-3.svg" width="27" height="27" loading="lazy" alt="">
+						<b>Создание позитивного информационного поля</b>
+					</li>
+				</ul>
+			</section>
+			<section class="principles container">
+				<h2 class="principles__title title">
+					Наши принципы:
+				</h2>
+				<ul class="principles__list">
+					<li class="principles__card">
+						Полная конфиденциальность
+					</li>
+					<li class="principles__card">
+						Гарантии на удаленную информацию
+					</li>
+					<li class="principles__card">
+						Боремся с источником
+					</li>
+					<li class="principles__card">
+						Предоставить лучший сервис и обслуживание
+					</li>
+				</ul>
+				<div class="principles__footer">
+					<div class="principles__btn-wrapper btn-wrapper">
+						<a href="#feedback-popup" class="principles__btn btn open-popup">
+							Удалить информацию
+						</a>
+					</div>
+				</div>
+			</section>
+			<section class="countries container">
+				<h2 class="countries__title title">
+					Мы находимся в нескольких странах
+				</h2>
+				<ul class="countries__list countries-list">
+					<li>
+						<div class="countries-list__image" style="--container: 219px;">
+							<div class="image-body">
+								<img src="img/countries/britain.svg" width="219" height="342" alt="">
+							</div>
+						</div>
+						<b class="countries-list__name min-title">
+							Великобритания
+						</b>
+					</li>
+					<li>
+						<div class="countries-list__image" style="--container: 361px;">
+							<div class="image-body">
+								<img src="img/countries/austria.svg" width="361" height="185" alt="">
+							</div>
+						</div>
+						<b class="countries-list__name min-title">
+							Австрия
+						</b>
+					</li>
+					<li>
+						<div class="countries-list__image" style="--container: 365px;">
+							<div class="image-body">
+								<img src="img/countries/usa.svg" width="365" height="255" alt="">
+							</div>
+						</div>
+						<b class="countries-list__name min-title">
+							США
+						</b>
+					</li>
+					<li>
+						<div class="countries-list__image" style="--container: 399px;">
+							<div class="image-body">
+								<img src="img/countries/cyprus.svg" width="399" height="238" alt="">
+							</div>
+						</div>
+						<b class="countries-list__name min-title">
+							Кипр
+						</b>
+					</li>
+				</ul>
+			</section>
+			<div class="section-row container">
+				<section class="reviews">
+					<h2 class="reviews__title title">
+						Отзывы
+					</h2>
+					<div class="reviews__text">
+						Здесь вы не найдете никаких отзывов о нас, их не может быть, так как всё очень конфеденциально
+					</div>
+					<ul class="reviews__gallery">
+						<li>
+							<div class="reviews__gallery--image image-body">
+								<picture>
+									<source data-srcset="img/about-us/reviews/reviews-image-1.webp" type="image/webp">
+									<img data-src="img/about-us/reviews/reviews-image-1.jpg" alt="" width="460" height="190" class="lazy">
+								</picture>
+								<div class="image-filter"></div>
+							</div>
+						</li>
+						<li>
+							<div class="reviews__gallery--image image-body">
+								<picture>
+									<source data-srcset="img/about-us/reviews/reviews-image-2.webp" type="image/webp">
+									<img data-src="img/about-us/reviews/reviews-image-2.jpg" alt="" width="350" height="238" class="lazy">
+								</picture>
+								<div class="image-filter"></div>
+							</div>
+						</li>
+					</ul>
+				</section>
+				<section class="collaborating">
+					<h2 class="collaborating__title title">
+						С кем мы сотрудничаем
+					</h2>
+					<ul class="collaborating__list">
+						<li>
+							<picture>
+								<source data-srcset="img/about-us/collaborating/collaborating-logo-1.webp" type="image/webp">
+								<img data-src="img/about-us/collaborating/collaborating-logo-1.png" alt="" width="69" height="69" class="lazy">
+							</picture>
+						</li>
+						<li>
+							<picture>
+								<source data-srcset="img/about-us/collaborating/collaborating-logo-2.webp" type="image/webp">
+								<img data-src="img/about-us/collaborating/collaborating-logo-2.png" alt="" width="73" height="39" class="lazy">
+							</picture>
+						</li>
+						<li>
+							<picture>
+								<source data-srcset="img/about-us/collaborating/collaborating-logo-1.webp" type="image/webp">
+								<img data-src="img/about-us/collaborating/collaborating-logo-1.png" alt="" width="69" height="69" class="lazy">
+							</picture>
+						</li>
+						<li>
+							<picture>
+								<source data-srcset="img/about-us/collaborating/collaborating-logo-2.webp" type="image/webp">
+								<img data-src="img/about-us/collaborating/collaborating-logo-2.png" alt="" width="73" height="39" class="lazy">
+							</picture>
+						</li>
+						<li>
+							<picture>
+								<source data-srcset="img/about-us/collaborating/collaborating-logo-1.webp" type="image/webp">
+								<img data-src="img/about-us/collaborating/collaborating-logo-1.png" alt="" width="69" height="69" class="lazy">
+							</picture>
+						</li>
+						<li>
+							<picture>
+								<source data-srcset="img/about-us/collaborating/collaborating-logo-2.webp" type="image/webp">
+								<img data-src="img/about-us/collaborating/collaborating-logo-2.png" alt="" width="73" height="39" class="lazy">
+							</picture>
+						</li>
+						<li>
+							<picture>
+								<source data-srcset="img/about-us/collaborating/collaborating-logo-1.webp" type="image/webp">
+								<img data-src="img/about-us/collaborating/collaborating-logo-1.png" alt="" width="69" height="69" class="lazy">
+							</picture>
+						</li>
+						<li>
+							<picture>
+								<source data-srcset="img/about-us/collaborating/collaborating-logo-2.webp" type="image/webp">
+								<img data-src="img/about-us/collaborating/collaborating-logo-2.png" alt="" width="73" height="39" class="lazy">
+							</picture>
+						</li>
+						<li>
+							<picture>
+								<source data-srcset="img/about-us/collaborating/collaborating-logo-1.webp" type="image/webp">
+								<img data-src="img/about-us/collaborating/collaborating-logo-1.png" alt="" width="69" height="69" class="lazy">
+							</picture>
+						</li>
+						<li>
+							<picture>
+								<source data-srcset="img/about-us/collaborating/collaborating-logo-2.webp" type="image/webp">
+								<img data-src="img/about-us/collaborating/collaborating-logo-2.png" alt="" width="73" height="39" class="lazy">
+							</picture>
+						</li>
+						<li>
+							<picture>
+								<source data-srcset="img/about-us/collaborating/collaborating-logo-1.webp" type="image/webp">
+								<img data-src="img/about-us/collaborating/collaborating-logo-1.png" alt="" width="69" height="69" class="lazy">
+							</picture>
+						</li>
+						<li>
+							<picture>
+								<source data-srcset="img/about-us/collaborating/collaborating-logo-2.webp" type="image/webp">
+								<img data-src="img/about-us/collaborating/collaborating-logo-2.png" alt="" width="73" height="39" class="lazy">
+							</picture>
+						</li>
+						<li>
+							<picture>
+								<source data-srcset="img/about-us/collaborating/collaborating-logo-1.webp" type="image/webp">
+								<img data-src="img/about-us/collaborating/collaborating-logo-1.png" alt="" width="69" height="69" class="lazy">
+							</picture>
+						</li>
+						<li>
+							<picture>
+								<source data-srcset="img/about-us/collaborating/collaborating-logo-2.webp" type="image/webp">
+								<img data-src="img/about-us/collaborating/collaborating-logo-2.png" alt="" width="73" height="39" class="lazy">
+							</picture>
+						</li>
+						<li>
+							<picture>
+								<source data-srcset="img/about-us/collaborating/collaborating-logo-1.webp" type="image/webp">
+								<img data-src="img/about-us/collaborating/collaborating-logo-1.png" alt="" width="69" height="69" class="lazy">
+							</picture>
+						</li>
+					</ul>
+				</section>
+			</div>
+			<section class="feedback container dark-section">
+				<div class="feedback__content">
+					<mark class="feedback__accent-text">Юридическая помощь</mark>
+					<h2 class="feedback__title title">
+						Всегда рады ответить на ваши вопросы
+					</h2>
+				</div>
+				<div class="feedback__btn-wrapper btn-wrapper">
+					<a href="#feedback-popup" class="feedback__btn btn open-popup">
+						Оставить <br> заявку
+					</a>
+				</div>
+			</section>
+		</main>
+
+		<footer class="footer">
+			<div class="footer__wrapper container">
+				<a href="index.html" class="footer__logo">
+					<img src="img/logo.svg" width="119" height="44" loading="lazy" alt="Логотип сайта" class="footer__logo--img">
+				</a>
+				<nav class="footer__nav">
+					<div class="footer__nav--block">
+						<h3>
+							Услуги
+						</h3>
+						<ul>
+							<li>
+								<a href="service-page.html">
+									Удаление информации
+								</a>
+							</li>
+							<li>
+								<a href="service-page.html">
+									Комплаенс
+								</a>
+							</li>
+							<li>
+								<a href="service-page.html">
+									Правовая поддержка
+								</a>
+							</li>
+							<li>
+								<a href="service-page.html">
+									Мониторинг
+								</a>
+							</li>
+							<li>
+								<a href="service-page.html">
+									Создание инфополя
+								</a>
+							</li>
+							<li>
+								<a href="service-page.html">
+									Раследования
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="footer__nav--block">
+						<h3>
+							Навигация
+						</h3>
+						<ul>
+							<li>
+								<a href="index.html">
+									Главная
+								</a>
+							</li>
+							<li>
+								<a href="#feedback-popup" class="open-popup">
+									Оставить заявку
+								</a>
+							</li>
+							<li>
+								<a href="about-us.html">
+									О компании
+								</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+				<div class="footer__social">
+					<ul>
+						<li>
+							<a href="#" title="Pinterest" style="--theme: #CB2027;">
+								<img src="img/social/pinterest.svg" width="38" height="38" loading="lazy" alt="">
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="footer__copy container">
+				Copyright all rights reserved – 2022 DELETE COMPROMAT
+			</div>
+		</footer>
+	</div>
+
+	<div class="feedback-popup popup" id="feedback-popup">
+		<div class="feedback-popup__wrapper popup-wrapper">
+			<div class="feedback-popup__bg popup-bg popup-close"></div>
+			<div class="feedback-popup__body popup-body">
+				<button type="button" class="feedback-popup__close-btn popup-close-btn popup-close" title="Закрыть">
+					<svg width="19" height="19" viewBox="0 0 19 19">
+						<use xlink:href="img/sprites.svg#close"></use>
+					</svg>
+				</button>
+				<form method="post" class="feedback-popup__form">
+					<h2 class="feedback-popup__title min-title">
+						Получите квалифицированную и профессиональную помощь
+					</h2>
+					<mark class="feedback-popup__accent-text">Ответим в течении 60 минут</mark>
+					<label>
+						<input type="text" name="name-or-company" placeholder="Имя/Компания" required class="input">
+					</label>
+					<label>
+						<input type="email" name="email" placeholder="E-mail" required class="input">
+					</label>
+					<div class="feedback-popup__form--footer">
+						<button class="standard-btn" type="submit">
+							Отправить
+						</button>
+					</div>
+				</form>
+				<div class="feedback-popup__gallery">
+					<div class="feedback-popup__gallery--body">
+						<div class="feedback-popup__gallery--item">
+							<div class="feedback-popup__gallery--image image-body">
+								<picture>
+									<source data-srcset="img/feedback/feedback-image-1.webp" type="image/webp">
+									<img data-src="img/feedback/feedback-image-1.jpg" alt="" width="312" height="215" class="lazy">
+								</picture>
+								<div class="image-filter"></div>
+							</div>
+						</div>
+						<div class="feedback-popup__gallery--item">
+							<div class="feedback-popup__gallery--image image-body">
+								<picture>
+									<source data-srcset="img/feedback/feedback-image-2.webp" type="image/webp">
+									<img data-src="img/feedback/feedback-image-2.jpg" alt="" width="178" height="178" class="lazy">
+								</picture>
+								<div class="image-filter"></div>
+							</div>
+						</div>
+						<div class="feedback-popup__gallery--item">
+							<div class="feedback-popup__gallery--logo">
+								<img src="img/logo-2.svg" width="96" height="38" loading="lazy" alt="">
+								<div class="image-filter"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/libs.min.js" defer></script>
+	<script src="js/main.min.js" defer></script>
+
+</body>
+
+</html>
