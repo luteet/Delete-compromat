@@ -189,7 +189,7 @@ btn.forEach(btn => {
 	btn.addEventListener('mousemove', function (event) {
 		const widthBox = btn.offsetWidth / 2, heightBox = btn.offsetHeight / 2, min = (btn.classList.contains('_min')) ? 3 : 5;
 		
-		btn.style.transform = `rotateX(${-(event.offsetY - heightBox) / min}deg) rotateY(${(event.offsetX - widthBox) / min}deg) translateZ(30px)`;
+		btn.style.transform = `rotateX(${-(event.offsetY - heightBox) / min}deg) rotateY(${(event.offsetX - widthBox) / min}deg) translate3d(${(event.offsetX - widthBox) / min}px, ${(event.offsetY - heightBox) / min}px, 30px)`;
 		//("transform", "rotateX(" + -(e.offsetY - heightBox) / 20 + "deg) rotateY(" + (e.offsetX - widthBox) / 20 + "deg) translate3d(0, 0, 45px)")
 	})
 
