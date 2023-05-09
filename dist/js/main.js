@@ -190,19 +190,15 @@ btn.forEach(btn => {
 		const widthBox = btn.offsetWidth / 2, heightBox = btn.offsetHeight / 2, min = (btn.classList.contains('_min')) ? 3 : 5;
 		
 		btn.style.transform = `rotateX(${-(event.offsetY - heightBox) / min}deg) rotateY(${(event.offsetX - widthBox) / min}deg) translate3d(${(event.offsetX - widthBox) / min}px, ${(event.offsetY - heightBox) / min}px, 30px)`;
-		//("transform", "rotateX(" + -(e.offsetY - heightBox) / 20 + "deg) rotateY(" + (e.offsetX - widthBox) / 20 + "deg) translate3d(0, 0, 45px)")
 	})
 
 	btn.addEventListener('mouseleave', function (event) {
 		btn.style.transform = 'translateZ(0px)';
-		/* btn.style.transition = 'transform .4s ease';
-		setTimeout(() => {
-			btn.style.removeProperty("transition");
-		},500) */
+
 		btn.classList.add('_blur');
 		btn.parentElement.classList.remove('_hover');
 		btn.parentElement.classList.remove('_hover-delay');
-		//("transform", "rotateX(" + -(e.offsetY - heightBox) / 20 + "deg) rotateY(" + (e.offsetX - widthBox) / 20 + "deg) translate3d(0, 0, 45px)")
+		
 	})
 })
 
@@ -222,14 +218,6 @@ resize();
 window.onresize = resize;
 
 // =-=-=-=-=-=-=-=-=-=-=-=- </resize> -=-=-=-=-=-=-=-=-=-=-=-=
-
-
-
-// =-=-=-=-=-=-=-=-=-=-=-=- <lazyload> -=-=-=-=-=-=-=-=-=-=-=-=
-
-new LazyLoad();
-
-// =-=-=-=-=-=-=-=-=-=-=-=- </lazyload> -=-=-=-=-=-=-=-=-=-=-=-=
 
 
 
@@ -380,6 +368,14 @@ const popup = new Popup();
 popup.init()
 
 // =-=-=-=-=-=-=-=-=-=-=-=- </popup> -=-=-=-=-=-=-=-=-=-=-=-=
+
+
+
+// =-=-=-=-=-=-=-=-=-=-=-=- <lazyload> -=-=-=-=-=-=-=-=-=-=-=-=
+
+new LazyLoad();
+
+// =-=-=-=-=-=-=-=-=-=-=-=- </lazyload> -=-=-=-=-=-=-=-=-=-=-=-=
 
 function slideUp (target, duration=300) {
 	target.style.transitionProperty = 'height, margin, padding';
