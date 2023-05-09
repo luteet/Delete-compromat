@@ -8,8 +8,12 @@
 		padding-top: 27px;
 
 		display: grid;
-		@include _550 {
-			grid-template-columns: repeat(auto-fit, minmax(350px, auto));
+		@include _768 {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		@media (min-width: 1650px) {
+			grid-template-columns: repeat(4, 1fr);
 		}
 		gap: 10px;
 		@include _768 {

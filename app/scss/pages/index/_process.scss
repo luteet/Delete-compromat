@@ -50,7 +50,11 @@
 
 		display: grid;
 		@include _768 {
-			grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+			grid-template-columns: 1fr 1fr;
+		}
+
+		@media (min-width: 1650px) {
+			grid-template-columns: repeat(4, 1fr);
 		}
 
 		li {

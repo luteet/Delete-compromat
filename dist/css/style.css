@@ -39,7 +39,7 @@
     border-bottom: 1px solid #c7c7c7
 }
 
-.services:has(.services__min) .services__item:first-child,.services__item {
+.services__item,.services__min+.services__list .services__item:first-child {
     margin-top: 75px
 }
 
@@ -399,7 +399,6 @@
 .guarantees__list {
     margin-top: 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(380px,1fr));
     gap: 20px
 }
 
@@ -592,6 +591,19 @@
     display: flex;
     align-items: center;
     flex: 1 1 auto
+}
+
+.countries-list__image img {
+    -webkit-filter: none;
+    filter: none;
+    transition: -webkit-filter .3s ease;
+    transition: filter .3s ease;
+    transition: filter .3s ease,-webkit-filter .3s ease
+}
+
+.countries-list li:hover .countries-list__image img {
+    -webkit-filter: brightness(0) saturate(100%) invert(36%) sepia(60%) saturate(1688%) hue-rotate(204deg) brightness(92%) contrast(94%);
+    filter: brightness(0) saturate(100%) invert(36%) sepia(60%) saturate(1688%) hue-rotate(204deg) brightness(92%) contrast(94%)
 }
 
 .countries-list__name {
@@ -1274,6 +1286,12 @@
     gap: 10px
 }
 
+@media(min-width:550px) {
+    .competencies__list {
+        grid-template-columns: repeat(auto-fill,minmax(450px,1fr))
+    }
+}
+
 .competencies__card {
     padding: 15px 20px;
     border: 1px solid #888;
@@ -1292,6 +1310,10 @@
         padding: 30px 40px;
         min-height: 175px;
         font-size: 1.25rem
+    }
+
+    .principles__list {
+        grid-template-columns: 1fr 1fr
     }
 }
 
@@ -1316,9 +1338,9 @@
     gap: 10px
 }
 
-@media(min-width:550px) {
-    .competencies__list,.principles__list {
-        grid-template-columns: repeat(auto-fit,minmax(350px,auto))
+@media(min-width:1650px) {
+    .principles__list {
+        grid-template-columns: repeat(4,1fr)
     }
 }
 
@@ -1813,6 +1835,23 @@
     gap: 30px 10px
 }
 
+@media(min-width:768px) {
+    .causes__list {
+        gap: 20px;
+        grid-template-columns: 1fr 1fr
+    }
+
+    .causes__list li h3 {
+        font-size: 1.125rem
+    }
+}
+
+@media(min-width:1650px) {
+    .causes__list {
+        grid-template-columns: repeat(4,1fr)
+    }
+}
+
 .causes__list li::before {
     display: block;
     width: 29px;
@@ -1827,17 +1866,6 @@
     font-size: 1.125rem;
     line-height: 140%;
     color: #1d1d1d
-}
-
-@media(min-width:768px) {
-    .causes__list {
-        grid-template-columns: repeat(auto-fit,minmax(300px,auto));
-        gap: 20px
-    }
-
-    .causes__list li h3 {
-        font-size: 1.125rem
-    }
 }
 
 @media(min-width:992px) {
@@ -2471,15 +2499,15 @@
 }
 
 @media (min-width:768px) {
-    .international-support__statistics,.process__list {
-        grid-template-columns: repeat(auto-fill,minmax(400px,1fr))
+    .consultation__form,.guarantees__list,.international-support__statistics,.process__list {
+        grid-template-columns: 1fr 1fr
     }
 
     .services__min {
         margin-top: 90px
     }
 
-    .services:has(.services__min) .services__item:first-child,.services__item {
+    .services__item,.services__min+.services__list .services__item:first-child {
         margin-top: 100px
     }
 
@@ -2518,10 +2546,6 @@
 
     .process__list h3 {
         font-size: 1.3rem
-    }
-
-    .consultation__form {
-        grid-template-columns: 1fr 1fr
     }
 
     .blog-section__list {
@@ -2588,7 +2612,7 @@
         padding-bottom: 100px
     }
 
-    .services:has(.services__min) .services__item:first-child,.services__item,.services__min {
+    .services__item,.services__min,.services__min+.services__list .services__item:first-child {
         margin-top: 150px
     }
 
@@ -2840,6 +2864,12 @@
 @media (min-width:1440px) {
     .blog-page__content .wp-block-columns>div {
         flex: 0 1 calc(50% - 35px)
+    }
+}
+
+@media (min-width:1650px) {
+    .guarantees__list,.international-support__statistics,.process__list {
+        grid-template-columns: repeat(4,1fr)
     }
 }
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */button,hr,input {
@@ -4071,16 +4101,16 @@ input:focus::placeholder,textarea:focus::placeholder {
     color: var(--accent-active)
 }
 
-.header__nav--list>li:has(ul):hover>a,.header__nav--list>li:has(ul):hover>a.active {
+.header__nav--list>li.menu-item-has-children:hover>a,.header__nav--list>li.menu-item-has-children:hover>a.active {
     color: var(--accent)
 }
 
-.header__nav--list>li:has(ul)>a>span {
+.header__nav--list>li.menu-item-has-children>a>span {
     display: inline-block;
     position: relative
 }
 
-.header__nav--list>li:has(ul)>a>span::after {
+.header__nav--list>li.menu-item-has-children>a>span::after {
     content: "";
     position: absolute;
     right: -15px;

@@ -30,6 +30,31 @@
 		align-items: center;
 
 		flex: 1 1 auto;
+
+		img {
+			filter: none;
+			transition: filter .3s ease;
+		}
+		
+
+		/* img {
+			display: none;
+		}
+
+		.mask {
+			position: absolute;
+			left: 0; top: 0;
+			width: 100%; height: 100%;
+			background: #000000;
+			transition: background .3s ease;
+			-webkit-mask-size: contain;
+		} */
+
+		
+	}
+
+	& li:hover &__image img {
+		filter: brightness(0) saturate(100%) invert(36%) sepia(60%) saturate(1688%) hue-rotate(204deg) brightness(92%) contrast(94%);
 	}
 
 	// .countries-list__name

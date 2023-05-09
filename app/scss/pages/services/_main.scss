@@ -61,7 +61,7 @@
 		}
 	}
 
-	&:has(&__min) &__item:first-child {
+	&__min + &__list &__item:first-child {
 		margin-top: 75px;
 		
 		@include _768 {

@@ -193,11 +193,11 @@
 				
 			}
 
-			&:has(ul):hover > a, &:has(ul):hover > a.active {
+			&.menu-item-has-children:hover > a, &.menu-item-has-children:hover > a.active {
 				color: var(--accent);
 			}
 
-			&:has(ul) > a > span {
+			&.menu-item-has-children > a > span {
 				display: inline-block;
 				position: relative;
 

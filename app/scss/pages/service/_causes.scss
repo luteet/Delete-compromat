@@ -23,8 +23,15 @@
 		display: grid;
 		gap: 30px 10px;
 		@include _768 {
-			grid-template-columns: repeat(auto-fit, minmax(300px,auto));
 			gap: 20px;
+		}
+
+		@include _768 {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		@media (min-width: 1650px) {
+			grid-template-columns: repeat(4, 1fr);
 		}
 
 		li {
